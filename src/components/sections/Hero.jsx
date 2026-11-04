@@ -2,57 +2,61 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
+import { useWebsiteData } from "@/context/WebsiteDataContext";
 
-const slides = [
+const defaultSlides = [
   {
     id: "spice-selection",
-    tagline: "Premium Spice Selection — Kerala's spice heritage for global markets",
-    headlineMain: "The Finest Spices of Kerala.",
-    headlineHighlight: "Delivered to the World.",
+    tagline: "Indian Spices · Rooted in Kerala · Direct Sourcing for Global Buyers",
+    headlineMain: "The Finest of Indian Spices.",
+    headlineHighlight: "Rooted in Kerala. Delivered to the World.",
     description:
-      "Direct from the fertile Western Ghats highlands, supplying authentic Kerala black pepper, green cardamom, cinnamon, and turmeric to international business buyers.",
+      "Connecting international food businesses directly with India's rich spice-growing origins. From the Western Ghats of Kerala to premier regional agricultural belts, we reduce unnecessary intermediaries to deliver dependable quality.",
     image: "/images/hero-spices.jpg",
-    alt: "Authentic Kerala spices: Malabar black peppercorns, Idukki green cardamom, Alleppey turmeric, Ceylon cinnamon sticks, and star anise on dark slate",
-    shortName: "Spice Selection",
+    alt: "Authentic Indian spices: Malabar black peppercorns, Idukki green cardamom, Erode and Alleppey turmeric, cinnamon quills, and whole spices on dark slate",
+    shortName: "Indian Spices",
   },
   {
     id: "black-pepper",
-    tagline: "Kerala Black Pepper — Bold character. Authentic origin.",
-    headlineMain: "The Finest Spices of Kerala.",
-    headlineHighlight: "Delivered to the World.",
+    tagline: "Malabar Black Pepper — Harvested at source in Kerala",
+    headlineMain: "The Finest of Indian Spices.",
+    headlineHighlight: "Rooted in Kerala. Delivered to the World.",
     description:
-      "Sun-cured Tellicherry black peppercorns renowned for their robust heat, high piperine content, and distinct Malabar terroir.",
+      "Sourced directly from traditional pepper plantations in Wayanad and Idukki. Sun-dried mature berries delivering signature sharp heat, rich aroma, and consistent bulk supply.",
     image: "/images/black-pepper.jpg",
-    alt: "Bold Tellicherry Malabar black peppercorns in dark ceramic artisan bowl on slate",
+    alt: "Bold Indian black peppercorns in dark ceramic artisan bowl on slate",
     shortName: "Black Pepper",
   },
   {
     id: "green-cardamom",
-    tagline: "Green Cardamom — Distinctive aroma. Natural richness.",
-    headlineMain: "The Finest Spices of Kerala.",
-    headlineHighlight: "Delivered to the World.",
+    tagline: "Green Cardamom — Grown in Kerala's misty highlands",
+    headlineMain: "The Finest of Indian Spices.",
+    headlineHighlight: "Rooted in Kerala. Delivered to the World.",
     description:
-      "Hand-picked from the misty Cardamom Hills of Idukki, prized globally for intense camphoraceous sweetness and high essential oil content.",
+      "Hand-harvested from the Cardamom Hills of Idukki, renowned worldwide for natural emerald color, three-sided plump pods, and intense sweet-citrus fragrance.",
     image: "/images/cardamom.jpg",
     alt: "Vibrant green cardamom pods hand-harvested in the high ranges of Idukki, Kerala",
     shortName: "Green Cardamom",
   },
   {
     id: "cinnamon-turmeric",
-    tagline: "Cinnamon & Turmeric — Pure botanical integrity. Sun-cured quality.",
-    headlineMain: "The Finest Spices of Kerala.",
-    headlineHighlight: "Delivered to the World.",
+    tagline: "Turmeric & Whole Spices — Regional Indian origins & Kerala provenance",
+    headlineMain: "The Finest of Indian Spices.",
+    headlineHighlight: "Rooted in Kerala. Delivered to the World.",
     description:
-      "Paper-thin Ceylon cinnamon quills and high-curcumin golden turmeric, tested and exported under strict international food safety standards.",
+      "Selected from verified agricultural hubs—including Alleppey (Kerala) and Erode (Tamil Nadu) for golden turmeric, and southern estates for delicate cinnamon quills and whole spices.",
     image: "/images/cinnamon.jpg",
-    alt: "Ceylon cinnamon quills tied with natural twine and golden spices on dark stone",
-    shortName: "Cinnamon & Turmeric",
+    alt: "Cinnamon quills and golden turmeric rhizomes on dark slate",
+    shortName: "Turmeric & Spices",
   },
 ];
 
 const SLIDE_DURATION = 6500; // 6.5 seconds per slide
 
 export default function Hero() {
+  const { content } = useWebsiteData();
+  const slides = content?.homepage?.slides && content.homepage.slides.length > 0 ? content.homepage.slides : defaultSlides;
+
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);

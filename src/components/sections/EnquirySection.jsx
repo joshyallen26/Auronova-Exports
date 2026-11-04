@@ -74,7 +74,7 @@ export default function EnquirySection() {
             </h2>
             <div className="w-16 h-[2px] bg-[#D6A441] mb-6" />
             <p className="text-base text-[#FAF7F0]/80 leading-relaxed mb-8 font-normal">
-              Direct estate pricing, verified laboratory certificates (COA), sample air courier packs, and FOB Cochin / CIF destination ocean freight estimates delivered within 24 business hours.
+              Direct sourcing pricing, export product specifications, sample air courier packs, and FOB Cochin / CIF destination ocean freight estimates delivered within 24 business hours.
             </p>
 
             {/* Direct Contact Information Cards */}
@@ -177,7 +177,7 @@ export default function EnquirySection() {
                       Request Formal Quote & Samples
                     </h3>
                     <p className="text-xs text-[#24251F]/70">
-                      Fill out your requirement for bulk pricing, COA certificates, and sample packs.
+                      Fill out your requirement for bulk pricing, product specifications, and sample packs.
                     </p>
                   </div>
 
@@ -255,13 +255,17 @@ export default function EnquirySection() {
                         onChange={handleChange}
                         className="w-full px-3.5 py-2.5 rounded-lg border border-[#E8E0D2] bg-white text-sm text-[#24251F] focus:outline-none focus:ring-2 focus:ring-[#D6A441]"
                       >
-                        <option>Malabar Black Pepper</option>
-                        <option>Alleppey Green Cardamom</option>
-                        <option>Alleppey Finger Turmeric</option>
-                        <option>Kerala Whole Cloves</option>
-                        <option>Ceylon Cinnamon Quills</option>
-                        <option>Cochin Dried Ginger</option>
-                        <option>Kerala Star Anise</option>
+                        <option>Black Pepper</option>
+                        <option>White Pepper</option>
+                        <option>Green Cardamom</option>
+                        <option>Cinnamon</option>
+                        <option>Cloves</option>
+                        <option>Turmeric (Kerala & Erode)</option>
+                        <option>Red Chilli</option>
+                        <option>Dried Ginger</option>
+                        <option>Nutmeg</option>
+                        <option>Mace</option>
+                        <option>Star Anise</option>
                         <option>Multiple Spices (Mixed Container)</option>
                       </select>
                     </div>
@@ -311,7 +315,7 @@ export default function EnquirySection() {
                       rows={3}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Mention any custom piperine/curcumin minimums, target destination port, packaging preferences, or required certifications..."
+                      placeholder="Mention any specific quality parameters, target destination port, packaging preferences, or required documentation..."
                       className="w-full px-3.5 py-2.5 rounded-lg border border-[#E8E0D2] bg-white text-sm text-[#24251F] focus:outline-none focus:ring-2 focus:ring-[#D6A441] resize-none"
                     />
                   </div>

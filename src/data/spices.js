@@ -1,4 +1,5 @@
-// Auronova Exports – 10 Core Kerala Spice Products
+// Auronova Exports – 11 Core Indian & Kerala Spice Products
+// Highlight Indian spices first, with Kerala as the primary origin and focus, alongside key regions like Erode, Tamil Nadu
 
 export const spices = [
   {
@@ -7,13 +8,13 @@ export const spices = [
     botanicalName: "Piper nigrum",
     slug: "black-pepper",
     category: "Whole Peppercorn",
-    origin: "Wayanad & Idukki, Kerala",
+    origin: "Kerala (Wayanad & Idukki), India",
     image: "/images/black-pepper.jpg",
     description:
-      "Traditionally celebrated as the 'King of Spices', Malabar black pepper is produced from hand-harvested mature green berries that are sun-cured to deep wrinkled black corns. Noted for its sharp, penetrating heat and rich piperine aroma.",
-    characteristics: "Bold whole berries, robust pungency, complex floral-pine undertones, high volatile oil retention.",
-    applications: "Meat curing, seasonings, culinary spice blends, table grinders, savory food processing, oleoresin extraction.",
-    packaging: "25kg / 50kg multi-wall kraft paper bags, double HDPE bags, or vacuum packs per buyer requirements.",
+      "Celebrated in global trade as the 'King of Spices', Indian black pepper from the Malabar coast is harvested from mature berries and sun-dried to deep wrinkled peppercorns. Renowned for its sharp, penetrating heat and rich piperine character.",
+    characteristics: "Bold whole berries, robust pungency, complex piney undertones, natural volatile aromatic compounds.",
+    applications: "Seasonings, meat processing, culinary spice blends, table grinders, industrial food preparation.",
+    packaging: "25kg / 50kg multi-wall paper bags, double HDPE bags, or buyer-specified export packing.",
   },
   {
     id: "white-pepper",
@@ -21,13 +22,13 @@ export const spices = [
     botanicalName: "Piper nigrum",
     slug: "white-pepper",
     category: "Whole Peppercorn",
-    origin: "Kerala, India",
+    origin: "Kerala & South India",
     image: "/images/white-pepper.jpg",
     description:
-      "Produced from fully ripe pepper berries where the outer dark pericarp is gently removed through controlled water soaking and gentle washing. Offers an earthy, fermented warmth with a clean, light appearance.",
-    characteristics: "Smooth creamy-white surface, subtle earthy sharpness, less abrasive heat than black pepper.",
-    applications: "Light-colored sauces, cream soups, mayonnaise, fine culinary dining, Asian broths, delicate seafood seasonings.",
-    packaging: "25kg / 50kg multi-wall paper bags with polyethylene barrier liner.",
+      "Produced from fully ripened pepper berries with the outer pericarp gently removed through controlled water soaking and washing. Delivers an earthy, subtle warmth with a clean, light presentation.",
+    characteristics: "Smooth creamy-white berries, mellow earthy pungency, clean color profile for pale dishes.",
+    applications: "Light sauces, cream soups, fine culinary dining, Asian broths, delicate seafood seasonings.",
+    packaging: "25kg / 50kg multi-wall bags with polyethylene moisture barrier liner.",
   },
   {
     id: "cardamom",
@@ -35,13 +36,13 @@ export const spices = [
     botanicalName: "Elettaria cardamomum",
     slug: "cardamom",
     category: "Whole Pods",
-    origin: "High Ranges, Idukki, Kerala",
+    origin: "Cardamom Hills (Idukki), Kerala, India",
     image: "/images/cardamom.jpg",
     description:
-      "Known worldwide as the 'Queen of Spices', green cardamom grows in the moist highland rainforests of Kerala's Cardamom Hills. The three-sided pods enclose sticky black aromatic seeds with a distinct camphoraceous-sweet bouquet.",
-    characteristics: "Vibrant natural green pods, intense citrus-eucalyptus fragrance, high essential oil content.",
-    applications: "Gourmet confectionery, bakery, Arabic and Turkish coffee blends, tea infusions, curries, masala blends, liqueurs.",
-    packaging: "5kg & 10kg master cartons with oxygen-barrier vacuum pouches or 25kg bulk containers.",
+      "Renowned as the 'Queen of Spices', Indian green cardamom thrives in the high-elevation rainforests of Kerala's Cardamom Hills. The three-sided pods enclose dark aromatic seeds with an intense sweet-citrus and camphoraceous profile.",
+    characteristics: "Vibrant green pods, intense natural fragrance, high seed-to-pod ratio, rich aromatic profile.",
+    applications: "Confectionery, baking, Arabic and Turkish coffee blends, tea infusions, curry powders, masala blends.",
+    packaging: "5kg & 10kg master cartons with protective vacuum liners or 25kg bulk containers.",
   },
   {
     id: "cinnamon",
@@ -49,13 +50,13 @@ export const spices = [
     botanicalName: "Cinnamomum verum",
     slug: "cinnamon",
     category: "Bark Quills",
-    origin: "Kerala, India",
+    origin: "Kerala & Southern India",
     image: "/images/cinnamon.jpg",
     description:
-      "True Ceylon cinnamon harvested from the delicate inner bark of evergreen trees. Formed by rolling thin paper-like layers together into soft, layered quills with a sweet, refined aroma and gentle warmth.",
-    characteristics: "Multi-layered fragile quills, sweet delicate fragrance, naturally low coumarin profile.",
-    applications: "Bakery, pastry, dessert infusions, spiced ciders, savory Middle Eastern and Indian stews, wellness teas.",
-    packaging: "10kg / 25kg export master cartons or bundles cut to custom lengths.",
+      "True cinnamon harvested from the delicate inner bark of evergreen trees cultivated in southern India. Layered into fragile, paper-thin quills with a sweet, refined aroma and warm, subtle flavor.",
+    characteristics: "Multi-layered fragile quills, sweet refined aroma, delicate warm flavor.",
+    applications: "Bakery, pastry, dessert infusions, spiced beverages, savory stews, herbal tea formulations.",
+    packaging: "10kg / 25kg export master cartons or bundled quills per buyer requirements.",
   },
   {
     id: "cloves",
@@ -63,12 +64,12 @@ export const spices = [
     botanicalName: "Syzygium aromaticum",
     slug: "cloves",
     category: "Flower Buds",
-    origin: "Central & Northern Kerala",
+    origin: "Kerala & South India",
     image: "/images/cloves.jpg",
     description:
-      "Aromatic unopened flower buds hand-plucked when green-pink and dried to a deep reddish-brown. Characterized by full intact crowns and exceptionally high natural eugenol oil content.",
-    characteristics: "Intact flower heads, pungent sweet-spicy warmth, high oiliness, deep reddish-brown color.",
-    applications: "Meat brining, pickling, mulled beverages, curry powders, dental and cosmetic extraction, seasoning sauces.",
+      "Unopened flower buds hand-picked at peak maturity and carefully dried to a deep reddish-brown. Recognizable by their intact crown heads and strong, sweet-spicy aroma.",
+    characteristics: "Intact flower heads, deep reddish-brown color, pungent sweet warmth, full appearance.",
+    applications: "Meat brining, pickling, mulled beverages, curry seasonings, industrial food formulations.",
     packaging: "10kg & 25kg multi-wall corrugated cartons with food-grade poly liners.",
   },
   {
@@ -77,13 +78,27 @@ export const spices = [
     botanicalName: "Curcuma longa",
     slug: "turmeric",
     category: "Rhizomes & Powder",
-    origin: "Alleppey & Central Kerala",
+    origin: "Kerala (Alleppey) & Erode (Tamil Nadu), India",
     image: "/images/turmeric.jpg",
     description:
-      "Prized for its deep golden-orange hue, Alleppey turmeric rhizomes are carefully cured, dried, and polished. Renowned across culinary and nutraceutical industries for its robust natural curcumin pigment and warm earthy aroma.",
-    characteristics: "Rich golden-yellow interior, characteristic earthy aroma, strong natural pigmenting power.",
-    applications: "Curry bases, mustard preparation, food coloring, functional beverage blends, extraction, dietary formulations.",
-    packaging: "25kg / 50kg double HDPE bags, multi-wall paper sacks, or super sacks.",
+      "Sourced from premier Indian turmeric regions, including Kerala's Alleppey belt and the famous turmeric trading hub of Erode, Tamil Nadu. Carefully cured, dried, and polished rhizomes prized for vibrant yellow-orange color and earthy aroma.",
+    characteristics: "Vibrant yellow-orange interior, characteristic earthy aroma, strong natural pigmenting quality.",
+    applications: "Curry bases, food seasoning, natural food coloring, functional food blends, beverage preparations.",
+    packaging: "25kg / 50kg double HDPE bags, multi-wall paper sacks, or bulk bags.",
+  },
+  {
+    id: "red-chilli",
+    name: "Red Chilli",
+    botanicalName: "Capsicum annuum",
+    slug: "red-chilli",
+    category: "Whole Dried Pods",
+    origin: "India (South Indian agricultural belts)",
+    image: "/images/red-chilli.jpg",
+    description:
+      "Sun-dried whole Indian red chillies sourced from major southern growing regions. Known across international food processing and spice packing markets for deep natural colour value and clean, dependable heat.",
+    characteristics: "Crisp sun-dried whole pods, vibrant red colour, balanced pungency, stems intact or stemless.",
+    applications: "Curry powders, hot sauces, seasoning blends, culinary paste manufacturing, retail packaging.",
+    packaging: "10kg, 25kg & 40kg gunny / woven polypropylene sacks or pressed bales.",
   },
   {
     id: "ginger",
@@ -91,12 +106,12 @@ export const spices = [
     botanicalName: "Zingiber officinale",
     slug: "ginger",
     category: "Dried Rhizomes",
-    origin: "Cochin & Highland Slopes, Kerala",
+    origin: "Kerala ('Cochin Ginger') & Regional India",
     image: "/images/ginger.jpg",
     description:
-      "Sun-dried ginger rhizomes from Kerala have historic renown in international trade as 'Cochin Ginger', acclaimed for their mild lemony undertone, clean heat, and fibrous density suitable for industrial processing.",
-    characteristics: "Firm knobby rhizomes, warming pungent bite, clean citrus note, low moisture content.",
-    applications: "Gingerbread, beverage brewing, tea blends, confectionery, spice powders, culinary seasonings, extracts.",
+      "Sun-dried ginger rhizomes celebrated historically in maritime trade as 'Cochin Ginger'. Appreciated for their warm pungent bite, fibrous density, and clean citrus-toned warmth.",
+    characteristics: "Firm unbleached whole rhizomes, clean warming bite, low moisture content.",
+    applications: "Gingerbread, beverage brewing, tea blends, confectionery, spice seasonings, baking.",
     packaging: "25kg / 50kg natural jute or woven polypropylene sacks.",
   },
   {
@@ -108,9 +123,9 @@ export const spices = [
     origin: "Kerala River Valleys, India",
     image: "/images/nutmeg.jpg",
     description:
-      "The oval seed found inside the yellow apricot-like fruit of the nutmeg tree. Shelled to reveal a dense, furrowed kernel with a warm, nutty, sweet fragrance that deepens when freshly grated.",
-    characteristics: "Dense oval kernel, intricate marble veining, warm nutty aroma, high natural essential oil fraction.",
-    applications: "Cream sauces, eggnog, baked goods, cheese dishes, sausage seasonings, spice blends like garam masala.",
+      "The oval seed found inside the fruit of the nutmeg tree grown extensively across Kerala's fertile river basins. Shelled to reveal a dense, furrowed kernel with a warm, sweet, nutty aroma.",
+    characteristics: "Dense oval kernel, intricate internal marbling, warm nutty aroma, sound sound-clean grade.",
+    applications: "Bakery, dairy desserts, savory sauces, cheese dishes, sausage seasonings, garam masala blends.",
     packaging: "25kg / 50kg multi-wall kraft paper bags or sound jute bags.",
   },
   {
@@ -122,10 +137,10 @@ export const spices = [
     origin: "Kerala River Valleys, India",
     image: "/images/mace.jpg",
     description:
-      "The delicate, lacy reddish-orange aril that envelops the nutmeg shell. When dried, it turns a warm amber-yellow and provides a fragrance similar to nutmeg but with lighter, more floral and peppery nuances.",
-    characteristics: "Lacy intact blades, brilliant orange-amber hue, delicate aromatic profile, softer sweetness.",
-    applications: "Fine charcuterie, clear soups, light broths, cakes, pastries, gourmet seasoning blends.",
-    packaging: "10kg & 15kg cartons with moisture barrier liners to preserve fragile blades.",
+      "The delicate, lacy reddish-orange aril enveloping the nutmeg shell. When dried, it turns a warm golden-amber, offering a fragrant profile similar to nutmeg but with refined, lighter floral nuances.",
+    characteristics: "Lacy intact blades, brilliant orange-amber hue, delicate aromatic profile, gentle sweetness.",
+    applications: "Fine baking, clear broths, delicate charcuterie, gourmet seasoning blends, confectionery.",
+    packaging: "10kg & 15kg cartons with protective moisture barrier liners.",
   },
   {
     id: "star-anise",
@@ -133,12 +148,12 @@ export const spices = [
     botanicalName: "Illicium verum",
     slug: "star-anise",
     category: "Whole Pods",
-    origin: "Western Ghats Foothills, Kerala",
+    origin: "Southern India & Western Ghats Foothills",
     image: "/images/star-anise.jpg",
     description:
-      "Distinctive star-shaped fruit consisting of six to eight boat-shaped carpels, each containing a glossy seed. Rich in anethole, imparting a sweet, licorice-like flavor profile beloved across Asian and Western kitchens.",
-    characteristics: "Symmetrical eight-point star shape, rust-brown color, distinct licorice aroma, sweet warmth.",
-    applications: "Five-spice powder, pho broths, braised meat preparations, chai tea blends, mulled wine, confectionery.",
+      "Distinctive star-shaped fruit consisting of boat-shaped carpels enclosing glossy seeds. Offers a sweet, licorice-like aroma prized across international cuisine, tea blending, and baking.",
+    characteristics: "Symmetrical star shape, reddish-brown color, distinct licorice-anise aroma, sweet warmth.",
+    applications: "Five-spice formulations, pho broths, braised savory dishes, chai tea blends, confectionery.",
     packaging: "10kg / 15kg export master cartons with protective poly lining.",
   },
 ];

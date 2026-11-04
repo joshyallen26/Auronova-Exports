@@ -14,22 +14,22 @@ export default function CompanyIntro() {
               Company Introduction
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.2] text-[#24251F] mb-6">
-              Centuries of Malabar Heritage. Modern Export Precision.
+              Rooted in India. Connecting the World Through Spices.
             </h2>
             <div className="w-16 h-[2px] bg-[#D6A441] mb-6" />
             <p className="text-base text-[#24251F]/80 leading-relaxed mb-6 font-normal">
-              Headquartered at Kochi—the historic crossroads of the maritime spice trade—<strong>Auronova Exports</strong> bridges Kerala&apos;s fertile Western Ghats hill estates directly to leading international food processors, tea masters, extraction houses, and gourmet distributors worldwide.
+              India has long been the world&apos;s most diverse home of spices and agricultural crops. Based in Cochin, Kerala, <strong>Auronova Exports</strong> focuses on connecting international buyers directly with authentic Indian spice-growing regions—with Kerala&apos;s legendary spice heritage as our primary identity, sourcing center, and operational hub.
             </p>
             <div className="flex items-center gap-3 text-xs text-[#4A2C20] font-semibold bg-[#FAF7F0] p-3.5 rounded-lg border border-[#E8E0D2]">
               <MapPin size={16} className="text-[#D6A441] flex-shrink-0" />
-              <span>Registered Office & Processing: Cochin Port Zone, Kerala, India</span>
+              <span>Export Desk & Operations: Cochin Port Zone, Kerala, India</span>
             </div>
           </div>
 
           {/* Right: Narrative Detail & Operational Pillars */}
           <div className="lg:col-span-7">
             <p className="text-lg text-[#24251F] leading-relaxed mb-8 italic text-balance">
-              &ldquo;Kerala spices have captivated world trade for over two millennia. Our mission is to honor that legacy by supplying uncompromised purity, rigorous lab verification, and absolute supply chain reliability to discerning global buyers.&rdquo;
+              &ldquo;Our vision is to build a transparent, dependable sourcing bridge between India&apos;s generational spice producers and overseas food enterprises—minimizing unnecessary intermediaries and honoring Kerala&apos;s historic position in global spice trade.&rdquo;
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-[#E8E0D2]">
@@ -37,9 +37,9 @@ export default function CompanyIntro() {
                 <div className="w-10 h-10 rounded-lg bg-[#526747]/10 flex items-center justify-center text-[#526747] mb-4">
                   <Leaf size={20} />
                 </div>
-                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Direct Estate Sourcing</h3>
+                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Direct Regional Sourcing</h3>
                 <p className="text-sm text-[#24251F]/70 leading-relaxed">
-                  We work closely with generational planters and certified cooperatives across Wayanad, Idukki, and the high-altitude Cardamom Hills.
+                  Partnering directly with grower clusters across Kerala&apos;s highland belts (Wayanad, Idukki) and key Indian agricultural regions such as Erode for turmeric.
                 </p>
               </div>
 
@@ -47,9 +47,9 @@ export default function CompanyIntro() {
                 <div className="w-10 h-10 rounded-lg bg-[#D6A441]/10 flex items-center justify-center text-[#4A2C20] mb-4">
                   <Shield size={20} />
                 </div>
-                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Purity & Lab Standards</h3>
+                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Transparent Quality Verification</h3>
                 <p className="text-sm text-[#24251F]/70 leading-relaxed">
-                  Every batch is rigorously tested for volatile oil content, moisture, piperine/curcumin levels, and strict compliance with EU and ASTA MRLs.
+                  Every consignment undergoes rigorous physical examination, moisture checking, and laboratory analysis aligned with commercial buyer contracts.
                 </p>
               </div>
 
@@ -57,9 +57,9 @@ export default function CompanyIntro() {
                 <div className="w-10 h-10 rounded-lg bg-[#4A2C20]/10 flex items-center justify-center text-[#4A2C20] mb-4">
                   <Award size={20} />
                 </div>
-                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Export Quality Grading</h3>
+                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Careful Post-Harvest Handling</h3>
                 <p className="text-sm text-[#24251F]/70 leading-relaxed">
-                  Mechanical cleaning, destoning, density-grading, and steam sterilization guarantee uniform visual appeal and microbial safety.
+                  Thorough cleaning, destoning, size-grading, and hygienic packing preserve natural aroma, color, and bulk physical integrity.
                 </p>
               </div>
 
@@ -67,9 +67,9 @@ export default function CompanyIntro() {
                 <div className="w-10 h-10 rounded-lg bg-[#24251F]/10 flex items-center justify-center text-[#24251F] mb-4">
                   <Anchor size={20} />
                 </div>
-                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Seamless Port Logistics</h3>
+                <h3 className="font-semibold text-lg text-[#24251F] mb-2">Kerala Port Connectivity</h3>
                 <p className="text-sm text-[#24251F]/70 leading-relaxed">
-                  Fast clearance and dispatch from Cochin International Seaport and Airport with comprehensive export documentation (COA, Phytosanitary, BL).
+                  Coordinated shipping via Cochin Seaport (ICTT Vallarpadam) and regional air routes, supported by standard export trade documentation.
                 </p>
               </div>
             </div>

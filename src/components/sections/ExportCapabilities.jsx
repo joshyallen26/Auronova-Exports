@@ -19,13 +19,13 @@ export default function ExportCapabilities() {
       icon: Package,
       title: "Export Packing & Preservation",
       description: "Engineered packaging solutions guarding against tropical humidity, salt air corrosion, and oxidation throughout maritime transit.",
-      specs: ["Nitrogen Flush Vacuum Bricks", "Multi-Wall Kraft Poly Sacks", "Custom Private Label Cartons"],
+      specs: ["Nitrogen Flush Vacuum Packs", "Multi-Wall Kraft Poly Sacks", "Export Private Label Cartons"],
     },
     {
       icon: FileCheck,
       title: "End-to-End Trade Compliance",
       description: "Complete export paperwork processed by experienced maritime customs brokers, guaranteeing hassle-free destination clearance.",
-      specs: ["Phytosanitary & COA Included", "Certificate of Origin (COO)", "Fumigation & Non-GMO Declarations"],
+      specs: ["Phytosanitary Certification", "Certificate of Origin (COO)", "Fumigation & Export Invoicing"],
     },
   ];
 

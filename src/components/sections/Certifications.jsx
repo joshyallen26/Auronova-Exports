@@ -4,51 +4,51 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 const certs = [
   {
-    id: "fssai",
-    Icon: Building2,
-    name: "FSSAI Certified",
-    body: "Food Safety & Standards Authority of India",
-    description: "Compliant with Indian export regulations and sanitary benchmarks for global food trade.",
-    color: "#D6A441",
-  },
-  {
-    id: "haccp",
+    id: "spiceboard",
     Icon: ShieldCheck,
-    name: "HACCP Compliant",
-    body: "Hazard Analysis Critical Control Points",
-    description: "Systematic preventive protocols eliminating biological, chemical, and physical hazards across processing.",
+    name: "Spices Board of India",
+    body: "Ministry of Commerce & Industry, Govt. of India",
+    description: "Registered Indian spice exporter complying with export regulations and trade standards.",
     color: "#526747",
   },
   {
-    id: "iso",
+    id: "fssai",
+    Icon: Building2,
+    name: "FSSAI Regulatory Compliance",
+    body: "Food Safety & Standards Authority of India",
+    description: "Operating in alignment with statutory Indian food safety and sanitary storage benchmarks.",
+    color: "#D6A441",
+  },
+  {
+    id: "dgft",
     Icon: Globe,
-    name: "ISO 22000:2018",
-    body: "Food Safety Management System",
-    description: "International standard for comprehensive food safety across sourcing, handling, and export packaging.",
+    name: "Import Export Code (IEC)",
+    body: "Directorate General of Foreign Trade (DGFT)",
+    description: "Authorized by the Government of India for legal commercial cross-border commodity export.",
     color: "#4A2C20",
   },
   {
-    id: "organic",
+    id: "phytosanitary",
     Icon: Leaf,
-    name: "Certified Organic Lots",
-    body: "NPOP & Global Organic Compliance",
-    description: "Certified zero-chemical, non-pesticide organic lots available for discerning clean-label markets.",
+    name: "Phytosanitary Certification",
+    body: "Plant Quarantine Division, Ministry of Agriculture",
+    description: "Government-issued plant health certificates accompanying export consignments to verify pest-free lots.",
     color: "#526747",
   },
   {
-    id: "eu",
+    id: "coo",
     Icon: Award,
-    name: "EU & ASTA Standards",
-    body: "Maximum Residue Limits & Cleanliness",
-    description: "Rigorous testing assuring full compliance with European and American Spice Trade Association purity specs.",
+    name: "Certificate of Origin (COO)",
+    body: "Authorized Chamber of Commerce / Export Agencies",
+    description: "Official documentation proving authentic regional provenance from Indian agricultural regions.",
     color: "#D6A441",
   },
   {
-    id: "spiceboard",
-    Icon: ShieldCheck,
-    name: "Spices Board India",
-    body: "Ministry of Commerce & Industry",
-    description: "Officially registered merchant exporter under the Spices Board of India, Kochi headquarters.",
+    id: "customs",
+    Icon: CheckCircle2,
+    name: "Cochin Port Customs Clearance",
+    body: "Indian Customs & Maritime Export Clearance",
+    description: "Complete commercial export billing, shipping bills, bill of lading, and fumigation certificates.",
     color: "#526747",
   },
 ];
@@ -65,14 +65,14 @@ export default function Certifications() {
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#D6A441] mb-3 block">
-            Quality Assurance & Standards
+            Regulatory & Trade Documentation
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#FAF7F0] leading-tight mb-4">
-            Recognized International Compliance
+            Export Compliance & Standards
           </h2>
           <div className="w-16 h-[2px] bg-[#D6A441] mx-auto mb-5" />
           <p className="text-base text-[#FAF7F0]/75 leading-relaxed">
-            Our trade operations and processing workflows adhere to verified international standards recognized across North America, Europe, Asia-Pacific, and the Middle East.
+            Our trade operations follow verified statutory export regulations and official documentation recognized across destination ports worldwide.
           </p>
         </div>
 

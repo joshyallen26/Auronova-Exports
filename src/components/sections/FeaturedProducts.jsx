@@ -3,25 +3,31 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Filter } from "lucide-react";
 import SpiceCard from "@/components/ui/SpiceCard";
 import EnquiryModal from "@/components/ui/EnquiryModal";
-import { spices } from "@/data/spices";
+import { spices as defaultSpices } from "@/data/spices";
+import { useWebsiteData } from "@/context/WebsiteDataContext";
 
 export default function FeaturedProducts({ onEnquireGlobal }) {
+  const { products } = useWebsiteData();
+  const spicesList = products && products.length > 0 ? products : defaultSpices;
   const [enquirySpice, setEnquirySpice] = useState(null);
   const [activeCategory, setActiveCategory] = useState("all");
 
   const categories = [
-    { id: "all", label: "All Kerala Spices" },
-    { id: "peppercorn", label: "Black Pepper" },
+    { id: "all", label: "All Products" },
+    { id: "peppercorn", label: "Black & White Pepper" },
     { id: "cardamom", label: "Green Cardamom" },
-    { id: "turmeric", label: "Turmeric" },
+    { id: "turmeric", label: "Turmeric (Kerala & Erode)" },
+    { id: "chilli", label: "Red Chilli" },
     { id: "cinnamon-cloves", label: "Cinnamon & Cloves" },
   ];
 
-  const filteredSpices = spices.filter((spice) => {
+  const filteredSpices = spicesList.filter((spice) => {
+    if (spice.status === "draft") return false;
     if (activeCategory === "all") return true;
-    if (activeCategory === "peppercorn") return spice.slug === "black-pepper";
+    if (activeCategory === "peppercorn") return spice.slug === "black-pepper" || spice.slug === "white-pepper";
     if (activeCategory === "cardamom") return spice.slug === "cardamom";
     if (activeCategory === "turmeric") return spice.slug === "turmeric";
+    if (activeCategory === "chilli") return spice.slug === "red-chilli";
     if (activeCategory === "cinnamon-cloves") return spice.slug === "cinnamon" || spice.slug === "cloves";
     return true;
   });
@@ -41,15 +47,14 @@ export default function FeaturedProducts({ onEnquireGlobal }) {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#526747]/10 text-[#526747] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Sparkles size={12} className="text-[#D6A441]" />
-            Direct From The Source
+            Direct From Regional Sourcing Origins
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#24251F] leading-tight mb-4">
-            Our Export Portfolio
+            Our Spice & Agricultural Product Range
           </h2>
           <div className="w-16 h-[2px] bg-[#D6A441] mx-auto mb-5" />
           <p className="text-base sm:text-lg text-[#24251F]/75 leading-relaxed">
-            Hand-harvested, cleaned, and graded to the strictest international food safety standards.
-            Supplied in bulk and customized export containers to world ports.
+            Carefully sourced whole spices and agricultural products from Kerala and key Indian agricultural regions. Cleaned, sound-graded, and packed in bulk export containers for international food businesses.
           </p>
         </div>
 
@@ -86,10 +91,10 @@ export default function FeaturedProducts({ onEnquireGlobal }) {
         <div className="mt-14 pt-8 border-t border-[#E8E0D2] flex flex-col sm:flex-row items-center justify-between gap-6 bg-white p-6 rounded-2xl border">
           <div>
             <h4 className="font-bold text-lg text-[#24251F]">
-              Need custom grades, essential oil specifications, or private labeling?
+              Looking for specific export packaging or container configurations?
             </h4>
             <p className="text-xs sm:text-sm text-[#24251F]/70 mt-1">
-              We process custom bulk orders according to ASTA, ESA, and client-specific microbial specs.
+              We coordinate bulk orders tailored to international import specifications and destination port requirements.
             </p>
           </div>
 

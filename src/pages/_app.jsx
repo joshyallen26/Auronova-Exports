@@ -1,6 +1,7 @@
 import { Manrope } from "next/font/google";
 import "@/styles/globals.css";
 import Layout from "@/components/layout/Layout";
+import { WebsiteDataProvider } from "@/context/WebsiteDataContext";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -11,14 +12,16 @@ const manrope = Manrope({
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={`${manrope.variable} ${manrope.className} font-sans`}>
-      <Layout
-        title={pageProps.title}
-        description={pageProps.description}
-        canonical={pageProps.canonical}
-      >
-        <Component {...pageProps} />
-      </Layout>
-    </div>
+    <WebsiteDataProvider>
+      <div className={`${manrope.variable} ${manrope.className} font-sans`}>
+        <Layout
+          title={pageProps.title}
+          description={pageProps.description}
+          canonical={pageProps.canonical}
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </div>
+    </WebsiteDataProvider>
   );
 }

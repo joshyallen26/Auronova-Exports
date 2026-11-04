@@ -5,22 +5,22 @@ import Link from "next/link";
 export default function KeralaHeritage() {
   const terroirPoints = [
     {
-      region: "Wayanad Highlands",
+      region: "Wayanad Highlands (Kerala)",
       altitude: "850m - 1,150m MSL",
-      crop: "Tellicherry Black Pepper",
-      description: "Steep rainforest slopes and volcanic laterite loam yield bold, dense berries packed with piperine and complex piney aroma.",
+      crop: "Malabar Black Pepper",
+      description: "Steep rainforest slopes and volcanic laterite loam yield bold, dense berries packed with natural piperine and complex piney aroma.",
     },
     {
-      region: "Idukki & Cardamom Hills",
+      region: "Idukki & Cardamom Hills (Kerala)",
       altitude: "900m - 1,400m MSL",
-      crop: "Alleppey Green Cardamom",
-      description: "Misty highland ridges, perpetual cool canopy, and rich humus foster extra-bold, bright emerald pods with unmatched volatile cineole oil.",
+      crop: "Green Cardamom",
+      description: "Misty highland ridges, perpetual cool canopy, and rich humus foster extra-bold, bright emerald pods with intense natural aroma.",
     },
     {
-      region: "Central Travancore Plains",
-      altitude: "River valleys & Coastal plains",
-      crop: "Alleppey Finger Turmeric",
-      description: "Alluvial soil enriched by monsoon river systems imparts deep yellow-orange pigment and high active curcumin levels.",
+      region: "Erode (Tamil Nadu) & Alleppey (Kerala)",
+      altitude: "Agricultural & Alluvial plains",
+      crop: "Erode & Alleppey Turmeric",
+      description: "Rich agricultural belts across southern India renowned for vibrant golden-yellow rhizomes, high curcumin content, and dependable commercial volumes.",
     },
   ];
 
@@ -37,14 +37,14 @@ export default function KeralaHeritage() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF7F0]/10 text-[#D6A441] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Compass size={12} className="text-[#D6A441]" />
-            Terroir & Origin
+            Indian Regional Origins & Kerala Provenance
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FAF7F0] leading-tight mb-4">
-            The Western Ghats Terroir: Where Spice History Began
+            From India&apos;s Rich Agricultural Belts to Kerala&apos;s Western Ghats
           </h2>
           <div className="w-16 h-[2px] bg-[#D6A441] mb-6" />
           <p className="text-base sm:text-lg text-[#FAF7F0]/80 leading-relaxed font-normal">
-            For three millennia, ships from Tyre, Alexandria, Rome, and Venice anchored at Kerala ports in search of authentic Malabar black pepper and green cardamom. The secret lies in a unique geological paradise found nowhere else on Earth.
+            India has enriched global cuisines for thousands of years through diverse agro-climatic zones. Within this vast landscape, Kerala holds a historic preeminence as the primary spice coast, complemented by specialized regional origins such as Erode for turmeric and southern agricultural clusters for whole spices.
           </p>
         </div>
 

@@ -3,6 +3,7 @@ import CompanyIntro from "@/components/sections/CompanyIntro";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
 import KeralaHeritage from "@/components/sections/KeralaHeritage";
 import QualityCommitment from "@/components/sections/QualityCommitment";
+import KeralaPortsSection from "@/components/sections/KeralaPortsSection";
 import ExportCapabilities from "@/components/sections/ExportCapabilities";
 import EnquirySection from "@/components/sections/EnquirySection";
 
@@ -15,19 +16,22 @@ export default function HomePage() {
       {/* 2. Company Introduction */}
       <CompanyIntro />
 
-      {/* 3. Featured Spices Portfolio */}
+      {/* 3. Featured Spices & Agricultural Products Portfolio */}
       <FeaturedProducts />
 
-      {/* 4. Kerala's Spice Heritage & Western Ghats Terroir */}
+      {/* 4. Regional Origins & Kerala's Spice Heritage */}
       <KeralaHeritage />
 
-      {/* 5. Sourcing & Quality Commitment */}
+      {/* 5. Sourcing & Quality Care */}
       <QualityCommitment />
 
-      {/* 6. Global Export Capabilities & Logistics */}
+      {/* 6. Kerala's Ports and Export Connectivity (All 18 Ports) */}
+      <KeralaPortsSection />
+
+      {/* 7. Global Export Capabilities & Logistics */}
       <ExportCapabilities />
 
-      {/* 7. Strong Final Commercial Enquiry / RFQ Section */}
+      {/* 8. Strong Final Commercial Enquiry / RFQ Section */}
       <EnquirySection />
     </>
   );
@@ -36,9 +40,9 @@ export default function HomePage() {
 export async function getStaticProps() {
   return {
     props: {
-      title: "Auronova Exports — Premium Kerala Spices Delivered to the World",
+      title: "Auronova Exports — The Finest of Indian Spices. Rooted in Kerala. Delivered to the World.",
       description:
-        "Kerala's premier international spice exporter based in Kochi. Supplying Grade A Malabar black pepper, Idukki green cardamom, Alleppey turmeric, cloves, and cinnamon to global food manufacturers and importers.",
+        "Indian spice and agricultural export business based in Cochin, Kerala. Connecting global buyers directly with Malabar black pepper, Idukki green cardamom, Erode and Alleppey turmeric, red chilli, cloves, and whole spices.",
       canonical: "/",
     },
   };

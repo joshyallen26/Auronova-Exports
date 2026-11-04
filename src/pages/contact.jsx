@@ -15,11 +15,12 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { spices } from "@/data/spices";
+import { useWebsiteData } from "@/context/WebsiteDataContext";
 
 const allProductsList = [
   ...spices.map((s) => s.name),
   "Multiple Products / Mixed Container",
-  "Other / Custom Sourcing Requirements",
+  "Other / Specific Sourcing Requirements",
 ];
 
 const initialForm = {
@@ -35,6 +36,7 @@ const initialForm = {
 
 export default function ContactPage() {
   const router = useRouter();
+  const { integrations, content } = useWebsiteData();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
@@ -117,10 +119,11 @@ export default function ContactPage() {
   };
 
   // WhatsApp click handler
+  const waTarget = (integrations?.whatsappNumber || "919400000000").replace(/[^0-9]/g, "");
   const waMessage = encodeURIComponent(
     `Hello Auronova Exports, I am contacting you regarding your Kerala spices export catalogue (Product: ${form.productOfInterest}).`
   );
-  const waLink = `https://wa.me/919400000000?text=${waMessage}`;
+  const waLink = `https://wa.me/${waTarget}?text=${waMessage}`;
 
   const contactFaqs = [
     {
@@ -133,7 +136,7 @@ export default function ContactPage() {
     },
     {
       q: "What export documentation is provided with shipments?",
-      a: "Every export shipment includes a Certificate of Analysis (COA), Phytosanitary Certificate issued by the Government of India Plant Quarantine authority, Certificate of Origin, Fumigation Certificate, Packing List, and Maritime Bill of Lading.",
+      a: "Standard export shipments include a Government Phytosanitary Certificate issued by the Plant Quarantine authority, Certificate of Origin, Fumigation Certificate, Packing List, and Maritime Bill of Lading.",
     },
     {
       q: "Can you provide customized packaging or private label bagging?",
@@ -492,7 +495,7 @@ export default function ContactPage() {
                         rows={4}
                         value={form.message}
                         onChange={handleChange}
-                        placeholder="Please state target specifications, required certificates (COA, Organic, FSSAI), target destination port, and packaging preferences..."
+                        placeholder="Please state desired spice varieties, estimated volume/tonnage, target destination port, and packaging preferences..."
                         className={`${inputBase} ${errors.message ? "border-red-400 focus:ring-red-300" : "border-[#E8E0D2]"} resize-none`}
                       />
                       {errors.message && (

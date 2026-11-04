@@ -40,7 +40,7 @@ export default function CertificationsPage() {
             transition={{ delay: 0.1 }}
             className="font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5 text-[#FAF7F0]"
           >
-            Our <span className="text-[#D6A441]">Certifications</span>
+            Compliance & <span className="text-[#D6A441]">Standards</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function CertificationsPage() {
             transition={{ delay: 0.2 }}
             className="text-base sm:text-lg text-[#FAF7F0]/80 leading-relaxed font-normal"
           >
-            Every certification we hold represents our unwavering commitment to food safety, quality, and ethical sourcing.
+            Our trade operations are conducted in full alignment with official Indian export authorities and statutory documentation standards.
           </motion.p>
         </div>
       </section>
@@ -58,8 +58,8 @@ export default function CertificationsPage() {
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeader
             eyebrow="Why It Matters"
-            title="Certified Quality, Guaranteed Trust"
-            subtitle="Importing food products internationally demands rigorous compliance. Our certifications ensure every shipment meets the regulatory requirements of your market."
+            title="Documented Compliance & Reliability"
+            subtitle="Exporting agricultural products internationally demands dependable compliance. We provide complete statutory documentation for every consignment departing Cochin Port."
             align="center"
           />
         </div>
@@ -74,8 +74,8 @@ export default function CertificationsPage() {
 export async function getStaticProps() {
   return {
     props: {
-      title: "Certifications — Aurnova Exports | FSSAI, HACCP, ISO 22000, Organic",
-      description: "Aurnova Exports holds FSSAI, HACCP, ISO 22000:2018, EU Organic, and Spices Board India certifications ensuring the highest global food safety standards.",
+      title: "Compliance & Trade Documentation — Auronova Exports",
+      description: "Auronova Exports operates under official Indian export registrations including Spices Board of India, FSSAI compliance, IEC registration, and Government Phytosanitary documentation.",
       canonical: "/certifications",
     },
   };

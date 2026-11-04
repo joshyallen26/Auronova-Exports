@@ -17,15 +17,15 @@ export default function AboutPage() {
       icon: Leaf,
     },
     {
-      title: "International Compliance",
+      title: "Quality Alignment",
       description:
-        "Strict adherence to international food safety standards, including ASTA cleanliness, European Spice Association limits, and US-FDA requirements.",
+        "Commitment to export physical cleanliness, moisture thresholds, and buyer quality specifications.",
       icon: Award,
     },
     {
       title: "Commercial Reliability",
       description:
-        "Guaranteed contract fulfillment, transparent Incoterm pricing (FOB Cochin / CIF Worldwide), and real-time shipping documentation.",
+        "Transparent Incoterm pricing (FOB Cochin / CIF Worldwide), prompt response, and reliable shipping documentation.",
       icon: Globe,
     },
   ];
@@ -33,19 +33,19 @@ export default function AboutPage() {
   const buyerBenefits = [
     {
       title: "Direct Port Logistics from Cochin",
-      desc: "Strategically situated near Cochin International Seaport (ICTT) and Cochin Airport (CIAL) for swift ocean and air freight consolidation.",
+      desc: "Strategically situated near Cochin Port (ICTT) and Cochin Airport (CIAL) for efficient ocean and air freight consolidation.",
     },
     {
-      title: "Single-Origin Traceability",
-      desc: "Crops are catalogued back to their harvest clusters in Wayanad, Idukki, and the Malabar coast, ensuring authentic terroir provenance.",
+      title: "Regional Sourcing & Traceability",
+      desc: "Spices are traced back to their authentic harvest regions across Kerala and premier Indian growing belts.",
     },
     {
-      title: "Custom Export Processing & Packaging",
-      desc: "Tailored grinding, destoning, steam sterilization, and nitrogen-barrier packaging suited to your industrial manufacturing specifications.",
+      title: "Export Processing & Packaging",
+      desc: "Cleaning, grading, sorting, and protective barrier packaging tailored to your bulk import requirements.",
     },
     {
-      title: "Comprehensive Laboratory Certification",
-      desc: "Shipments include rigorous analytical testing for volatile oils, moisture content, piperine, curcumin, and microbiology.",
+      title: "Quality & Export Documentation",
+      desc: "Shipments include standard quality inspections, government phytosanitary certificates, and export documentation.",
     },
   ];
 
@@ -78,17 +78,14 @@ export default function AboutPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-[#FAF7F0] mb-6">
-              Rooted in Kerala.{" "}
+              The Finest of Indian Spices.{" "}
               <span className="italic text-[#D6A441] block mt-1">
-                Connecting the World Through Spices.
+                Rooted in Kerala. Delivered to the World.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#FAF7F0]/80 leading-relaxed font-normal mb-8 max-w-2xl">
-              Based in Cochin, Kerala, Auronova Exports is an established international merchant exporter
-              specializing in bulk commercial supply of premium, single-origin Malabar black pepper,
-              green cardamom, turmeric, cinnamon, and whole spices for global food manufacturers,
-              importers, and distributors.
+              India is the world&apos;s foremost home of aromatic spices and agricultural diversity. At Auronova Exports, based in Cochin, Kerala, we connect verified spice growers and agricultural product sources directly with international importers, food manufacturers, and wholesalers—reducing unnecessary intermediaries and making sourcing more transparent and dependable.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -129,7 +126,7 @@ export default function AboutPage() {
                   For over two millennia, the southwest coast of India—the legendary Malabar Spice Coast—has been the epicenter of global maritime spice routes. It was the allure of Malabar black pepper, high-altitude green cardamom, and Cochin ginger that brought Phoenicians, Roman galleons, and Venetian merchants to our ports.
                 </p>
                 <p>
-                  Auronova Exports honors this ancient heritage through a modern, transparent export framework. Based near Cochin Port, we connect international food processors, botanical extractors, and wholesale distributors directly to verified regional estates in Wayanad, Idukki, and Central Travancore.
+                  Auronova Exports honors this ancient heritage through a modern, transparent export framework. Based near Cochin Port, we connect international food processors, brand packagers, and wholesale distributors directly to verified regional estates in Wayanad, Idukki, and agricultural sourcing regions across India.
                 </p>
                 <p className="p-4 rounded-xl bg-white border border-[#E8E0D2] text-xs sm:text-sm text-[#4A2C20] italic">
                   <strong>Company Note:</strong> [Editable placeholder for founding timeline, leadership profile, and certified grower collective milestones — tailored to company records].
@@ -151,7 +148,7 @@ export default function AboutPage() {
                     Western Ghats Terroir (UNESCO World Heritage Zone)
                   </span>
                   <p className="text-xs text-[#FAF7F0]/80">
-                    High elevation (800m - 1,500m), rich forest humus, and dual monsoons naturally concentrate essential aromatic oils.
+                    High elevation (800m - 1,500m), rich forest humus, and dual monsoons naturally concentrate rich aroma, color, and robust flavor.
                   </p>
                 </div>
               </div>
@@ -207,12 +204,12 @@ export default function AboutPage() {
               <div className="w-12 h-12 rounded-xl bg-[#4A2C20]/10 flex items-center justify-center text-[#526747] mb-6">
                 <Shield size={24} />
               </div>
-              <h3 className="font-semibold text-xl text-[#24251F] mb-3">3. Laboratory Analysis</h3>
+              <h3 className="font-semibold text-xl text-[#24251F] mb-3">3. Quality Verification</h3>
               <p className="text-sm text-[#34332E]/70 leading-relaxed mb-4">
-                Pre-shipment verification for moisture, volatile oil levels, active phytochemicals (piperine/curcumin), and screening for zero pesticide residues.
+                Pre-shipment inspection for moisture control, grading consistency, aroma integrity, physical cleanliness, and commercial contract parameters.
               </p>
               <span className="text-xs font-semibold text-[#4A2C20] block">
-                ✓ Certified COA furnished with every export container
+                ✓ Commercial documentation and inspection reports provided
               </span>
             </div>
           </div>
@@ -230,7 +227,7 @@ export default function AboutPage() {
               </span>
               <h3 className="text-2xl sm:text-3xl font-semibold text-[#FAF7F0] mb-4">Our Mission</h3>
               <p className="text-sm sm:text-base text-[#FAF7F0]/80 leading-relaxed">
-                To serve as a reliable, transparent bridge between Kerala&apos;s generational spice growers and the global food industry—delivering authentic purity, certified quality, and seamless international shipping logistics.
+                To connect India's spice-growing regions and agricultural producers with international buyers through a direct, transparent, and dependable sourcing approach. We aim to make authentic Indian spices and products more accessible to global markets while building meaningful business relationships between producers and buyers.
               </p>
             </div>
 
@@ -240,7 +237,7 @@ export default function AboutPage() {
               </span>
               <h3 className="text-2xl sm:text-3xl font-semibold text-[#FAF7F0] mb-4">Our Vision</h3>
               <p className="text-sm sm:text-base text-[#FAF7F0]/80 leading-relaxed">
-                To establish Kerala spices as the undisputed global gold standard for botanical integrity, sustainable agro-forestry, and ethical international commerce.
+                To build a trusted bridge between the source of Indian spices and products and the businesses that need them across the world. We envision a more direct and transparent sourcing network where international buyers can access authentic Indian products closer to their origins, with fewer unnecessary intermediaries and a clearer connection to the people and regions behind them.
               </p>
             </div>
           </div>
@@ -318,7 +315,7 @@ export default function AboutPage() {
                 Request Product Specifications & Sample Consignments
               </h3>
               <p className="text-xs sm:text-sm text-[#FAF7F0]/80 mt-2 max-w-xl">
-                Our export team provides detailed specification sheets, laboratory COA documentation, and fast air courier sample packs to qualified commercial buyers worldwide.
+                Our export team provides detailed specification sheets, export documentation, and air courier sample packs to qualified commercial buyers worldwide.
               </p>
             </div>
 

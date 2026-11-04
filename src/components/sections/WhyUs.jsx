@@ -5,38 +5,38 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const pillars = [
   {
     Icon: Leaf,
-    title: "Farm-to-Export Traceability",
-    description: "Every batch is traceable back to the farm. We partner directly with certified growers across Kerala's spice belt — eliminating middlemen and ensuring authentic provenance.",
+    title: "Direct Regional Sourcing",
+    description: "We connect international buyers directly with growers and primary sourcing centres across Kerala and key Indian spice belts, reducing intermediaries and improving transparency.",
     color: "#2D6A4F", bg: "rgba(45,106,79,0.08)",
   },
   {
     Icon: Shield,
-    title: "International Quality Standards",
-    description: "Our processing facilities comply with HACCP, ISO 22000:2018, and EU food safety norms. Rigorous lab testing ensures every shipment meets the highest global benchmarks.",
+    title: "Quality Verification",
+    description: "We coordinate thorough physical inspection, grading, and testing aligned with buyer specifications to ensure moisture control, aroma retention, and export cleanliness.",
     color: "#D4A017", bg: "rgba(212,160,23,0.08)",
   },
   {
     Icon: FlaskConical,
-    title: "Certified Organic Options",
-    description: "We offer certified organic variants of all our spice lines, backed by third-party certifications accepted across North America, Europe, and Asia-Pacific.",
+    title: "Carefully Sourced Natural Lots",
+    description: "Carefully chosen spice harvests cured and sun-dried according to time-tested agricultural practices, maintaining natural color, essential flavor, and whole pod integrity.",
     color: "#5C2D0E", bg: "rgba(92,45,14,0.08)",
   },
   {
     Icon: Truck,
-    title: "Reliable Global Logistics",
-    description: "Full-container and LCL shipping, vacuum-sealed and nitrogen-flushed packaging, and real-time shipment tracking — ensuring freshness from Kochi to your warehouse.",
+    title: "Ocean & Air Export Logistics",
+    description: "FCL and LCL container stuffing, multi-commodity consolidation, and export shipments handled efficiently through Cochin Port and Cochin International Airport.",
     color: "#2D6A4F", bg: "rgba(45,106,79,0.08)",
   },
   {
     Icon: Globe,
-    title: "40+ Countries Served",
-    description: "From the USA and Germany to Japan and Australia, our spices enrich cuisines and supply chains worldwide. Custom documentation for import compliance in every market.",
+    title: "International Market Reach",
+    description: "Connecting Indian spice sources with food manufacturers, brand packers, and wholesale distributors globally, backed by complete commercial documentation.",
     color: "#D4A017", bg: "rgba(212,160,23,0.08)",
   },
   {
     Icon: Handshake,
-    title: "Dedicated Export Support",
-    description: "A dedicated account manager, flexible MOQs for first orders, and end-to-end documentation including phytosanitary certificates, COA, and MSDS.",
+    title: "Dedicated B2B Support",
+    description: "Transparent FOB Cochin / CIF destination pricing, responsive communication, and comprehensive documentation including Phytosanitary Certificates and Certificates of Origin.",
     color: "#5C2D0E", bg: "rgba(92,45,14,0.08)",
   },
 ];
@@ -61,8 +61,8 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
           eyebrow="Why Choose Us"
-          title="The Aurnova Difference"
-          subtitle="We combine generations of Kerala spice expertise with modern export infrastructure to deliver quality you can count on."
+          title="The Auronova Advantage"
+          subtitle="Connecting international buyers directly to the richness of Indian spices, with our sourcing operations and primary identity rooted in Kerala."
           align="center"
           className="mb-16"
         />

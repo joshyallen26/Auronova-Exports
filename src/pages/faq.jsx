@@ -9,11 +9,11 @@ const faqCategories = [
     questions: [
       {
         q: "What types of spices does Auronova Exports supply?",
-        a: "We supply ten core Kerala spices: Malabar Black Pepper, White Pepper, Alleppey Green Cardamom, Ceylon Cinnamon quills, Kerala Whole Cloves, Alleppey Turmeric, Cochin Dried Ginger, Whole Nutmeg, Mace blades, and Kerala Star Anise.",
+        a: "We supply eleven core Indian spices with sourcing rooted primarily in Kerala alongside premier regional origins: Malabar Black Pepper, White Pepper, Green Cardamom, Cinnamon, Cloves, Turmeric (Alleppey, Kerala and Erode, Tamil Nadu), Red Chilli, Dried Ginger, Nutmeg, Mace, and Star Anise.",
       },
       {
         q: "How is the quality and moisture level of the spices verified?",
-        a: "Every crop batch is evaluated according to American Spice Trade Association (ASTA) and European Spice Association (ESA) cleanliness standards. We verify moisture content using standard Karl Fischer or oven-drying methods, and conduct volatile oil determinations via hydrodistillation prior to export release.",
+        a: "Every shipment is evaluated for physical cleanliness, moisture control, grade sizing, and aroma integrity aligned with commercial buyer specifications and official export parameters.",
       },
       {
         q: "Are the spices treated with radiation or chemical fumigants?",
@@ -26,7 +26,7 @@ const faqCategories = [
     questions: [
       {
         q: "How can I request pre-shipment sample packs?",
-        a: "Qualified commercial buyers can request sample packs through our Contact page or by emailing exports@auronovaexports.com. Samples are packaged in protective barrier pouches and dispatched internationally via DHL or FedEx air courier along with a preliminary Certificate of Analysis (COA).",
+        a: "Qualified commercial buyers can request sample packs through our Contact page or by emailing exports@auronovaexports.com. Samples are packaged in protective barrier pouches and dispatched internationally via DHL or FedEx air courier along with technical product specification sheets.",
       },
       {
         q: "What are the standard Minimum Order Quantities (MOQ)?",
@@ -47,7 +47,7 @@ const faqCategories = [
       },
       {
         q: "What export documentation is provided with every shipment?",
-        a: "Full export documentation includes: Commercial Invoice, Packing List, Bill of Lading (B/L), Government-issued Phytosanitary Certificate, Certificate of Origin (COO), Certificate of Analysis (COA), and Fumigation Certificate.",
+        a: "Full export documentation includes: Commercial Invoice, Packing List, Bill of Lading (B/L), Government-issued Phytosanitary Certificate, Certificate of Origin (COO), and Fumigation Certificate.",
       },
       {
         q: "What packaging configurations are available for bulk buyers?",

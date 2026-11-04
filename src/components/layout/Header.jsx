@@ -4,11 +4,16 @@ import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowRight, ShieldCheck, Globe } from "lucide-react";
 import { navLinks } from "@/data/spices";
+import { useWebsiteData } from "@/context/WebsiteDataContext";
 
 export default function Header({ onOpenQuote }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { pathname } = useRouter();
+  const { integrations, content } = useWebsiteData();
+
+  const phone = integrations?.phone || content?.contact?.phone || "+91 (484) 290-0000";
+  const email = integrations?.email || content?.contact?.email || "exports@auronovaexports.com";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -30,24 +35,24 @@ export default function Header({ onOpenQuote }) {
             </span>
             <span className="hidden lg:inline-flex items-center gap-1.5 text-[#FAF7F0]/70">
               <Globe size={12} className="text-[#D6A441]" />
-              Shipping to 40+ Global Ports (FOB / CIF / CFR)
+              Shipping to International Ports (FOB / CIF / CFR)
             </span>
           </div>
 
           <div className="flex items-center gap-6 text-[#FAF7F0]/80">
             <a
-              href="mailto:exports@auronovaexports.com"
+              href={`mailto:${email}`}
               className="hidden sm:flex items-center gap-1.5 hover:text-[#D6A441] transition-colors"
             >
               <Mail size={12} className="text-[#D6A441]" />
-              exports@auronovaexports.com
+              {email}
             </a>
             <a
-              href="tel:+914842900000"
+              href={`tel:${phone.replace(/[^+\d]/g, "")}`}
               className="flex items-center gap-1.5 hover:text-[#D6A441] transition-colors font-medium"
             >
               <Phone size={12} className="text-[#D6A441]" />
-              +91 (484) 290-0000
+              {phone}
             </a>
           </div>
         </div>
@@ -190,11 +195,11 @@ export default function Header({ onOpenQuote }) {
                 <div className="text-xs text-[#24251F]/70 space-y-2">
                   <p className="flex items-center gap-2">
                     <Phone size={13} className="text-[#526747]" />
-                    +91 (484) 290-0000
+                    {phone}
                   </p>
                   <p className="flex items-center gap-2">
                     <Mail size={13} className="text-[#526747]" />
-                    exports@auronovaexports.com
+                    {email}
                   </p>
                 </div>
               </div>

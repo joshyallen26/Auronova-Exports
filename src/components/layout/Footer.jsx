@@ -1,9 +1,16 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Globe, ArrowRight, ShieldCheck, Award } from "lucide-react";
-import { navLinks, spices } from "@/data/spices";
+import { navLinks, spices as defaultSpices } from "@/data/spices";
+import { useWebsiteData } from "@/context/WebsiteDataContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { products: dynamicProducts, integrations, content } = useWebsiteData();
+
+  const spices = dynamicProducts && dynamicProducts.length > 0 ? dynamicProducts : defaultSpices;
+  const phone = integrations?.phone || content?.contact?.phone || "+91 (484) 290-0000 / +91 94000 00000";
+  const email = integrations?.email || content?.contact?.email || "exports@auronovaexports.com";
+  const address = integrations?.address || content?.contact?.address || "Auronova Exports Pvt. Ltd.\nSpice Trade Centre, Cochin Port Zone\nKochi, Kerala 682 001, India";
 
   return (
     <footer className="bg-[#1C1D18] text-[#FAF7F0] border-t border-[#33322B] relative overflow-hidden">
@@ -26,7 +33,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm text-[#FAF7F0]/70 leading-relaxed mb-6 font-normal">
-              Premier international spice export house based in Cochin, Kerala. Sourcing authentic Malabar black pepper, green cardamom, turmeric, and whole spices directly from high-elevation Western Ghats estates for global commercial importers.
+              Connecting international buyers directly with authentic Indian spices and agricultural products, with sourcing operations and primary identity rooted in Kerala. Cleaned, graded, and exported directly through Cochin Port.
             </p>
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FAF7F0]/5 border border-white/10 text-xs text-[#FAF7F0]/80">
@@ -87,22 +94,20 @@ export default function Footer() {
             <ul className="space-y-3 text-xs text-[#FAF7F0]/75">
               <li className="flex items-start gap-2.5">
                 <MapPin size={15} className="text-[#D6A441] flex-shrink-0 mt-0.5" />
-                <span>
-                  Auronova Exports Pvt. Ltd.<br />
-                  Spice Trade Centre, Cochin Port Zone<br />
-                  Kochi, Kerala 682 001, India
+                <span className="whitespace-pre-line leading-relaxed">
+                  {address}
                 </span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={15} className="text-[#D6A441] flex-shrink-0" />
-                <a href="mailto:exports@auronovaexports.com" className="hover:text-[#D6A441] transition-colors">
-                  exports@auronovaexports.com
+                <a href={`mailto:${email}`} className="hover:text-[#D6A441] transition-colors">
+                  {email}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={15} className="text-[#D6A441] flex-shrink-0" />
-                <a href="tel:+914842900000" className="hover:text-[#D6A441] transition-colors">
-                  +91 (484) 290-0000 / +91 94000 00000
+                <a href={`tel:${phone.split("/")[0].trim().replace(/[^+\d]/g, "")}`} className="hover:text-[#D6A441] transition-colors">
+                  {phone}
                 </a>
               </li>
             </ul>

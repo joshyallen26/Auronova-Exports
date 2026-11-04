@@ -2,17 +2,21 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ArrowRight, Search, Filter, ShieldCheck, FileText, Package, CheckCircle2, Clock } from "lucide-react";
-import { spices } from "@/data/spices";
+import { spices as defaultSpices } from "@/data/spices";
+import { useWebsiteData } from "@/context/WebsiteDataContext";
 
 export default function ProductsPage() {
   const router = useRouter();
+  const { products: dynamicProducts } = useWebsiteData();
+  const spices = dynamicProducts && dynamicProducts.length > 0 ? dynamicProducts : defaultSpices;
+
   const [activeCategory, setActiveCategory] = useState("all");
   const [search, setSearch] = useState("");
 
   const categories = [
-    { id: "all", label: "All Spices (10)" },
+    { id: "all", label: `All Spices (${spices.length})` },
     { id: "peppercorns", label: "Peppercorns" },
-    { id: "pods-seeds", label: "Pods & Seeds" },
+    { id: "pods-seeds", label: "Pods, Seeds & Chillies" },
     { id: "bark-flower", label: "Bark & Flower Buds" },
     { id: "roots", label: "Roots & Rhizomes" },
   ];
@@ -22,7 +26,12 @@ export default function ProductsPage() {
     if (activeCategory === "peppercorns") {
       matchCat = s.slug === "black-pepper" || s.slug === "white-pepper";
     } else if (activeCategory === "pods-seeds") {
-      matchCat = s.slug === "cardamom" || s.slug === "nutmeg" || s.slug === "mace" || s.slug === "star-anise";
+      matchCat =
+        s.slug === "cardamom" ||
+        s.slug === "nutmeg" ||
+        s.slug === "mace" ||
+        s.slug === "star-anise" ||
+        s.slug === "red-chilli";
     } else if (activeCategory === "bark-flower") {
       matchCat = s.slug === "cinnamon" || s.slug === "cloves";
     } else if (activeCategory === "roots") {
@@ -69,13 +78,13 @@ export default function ProductsPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-[#FAF7F0] mb-5">
-            Discover the Finest Spices of Kerala.
+            The Finest of Indian Spices.
           </h1>
 
           <p className="text-base sm:text-lg text-[#FAF7F0]/80 leading-relaxed font-normal max-w-2xl mx-auto mb-8">
             Commercial bulk supply for international food manufacturers, industrial processors,
-            spice distributors, tea blenders, and wholesale importers. Cleaned, graded, and exported
-            directly from Cochin Port.
+            spice distributors, and wholesale importers. Rooted in Kerala and connected with premier
+            Indian growing regions, exported directly from Cochin Port.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#FAF7F0]/70 pt-4 border-t border-white/10 max-w-2xl mx-auto">
@@ -254,7 +263,7 @@ export default function ProductsPage() {
             </h2>
             <div className="w-16 h-[2px] bg-[#D6A441] mb-6" />
             <p className="text-base text-[#34332E]/75 leading-relaxed">
-              We streamline international spice procurement for overseas buyers through transparent commercial quotes, verified lab documentation, and guaranteed vessel bookings.
+              We streamline international spice procurement for overseas buyers through transparent commercial quotes, verified export documentation, and dependable shipping schedules.
             </p>
           </div>
 
@@ -279,7 +288,7 @@ export default function ProductsPage() {
               <span className="text-xs font-bold text-[#D6A441] block mb-2">Step 03</span>
               <h3 className="font-semibold text-base text-[#24251F] mb-2">Sample Verification</h3>
               <p className="text-xs sm:text-sm text-[#34332E]/70 leading-relaxed">
-                Pre-shipment production samples dispatched via air courier (DHL/FedEx) accompanied by full Certificate of Analysis (COA).
+                Pre-shipment production samples dispatched via air courier (DHL/FedEx) accompanied by product specification data.
               </p>
             </div>
 
@@ -299,10 +308,10 @@ export default function ProductsPage() {
                 Have a Commercial Requirement?
               </span>
               <h3 className="text-2xl sm:text-3xl font-normal leading-tight">
-                Request a Custom Bulk Export Quote
+                Request a Bulk Export Quote
               </h3>
               <p className="text-xs sm:text-sm text-[#FAF7F0]/80 mt-1 max-w-xl">
-                We accommodate single-commodity containers, mixed-spice consolidations, and recurring annual contracts.
+                We accommodate single-commodity containers, mixed-spice consolidations, and recurring commercial contracts.
               </p>
             </div>
 

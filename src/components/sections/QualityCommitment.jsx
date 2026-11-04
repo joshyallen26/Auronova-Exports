@@ -6,41 +6,41 @@ export default function QualityCommitment() {
   const qualityPillars = [
     {
       step: "01",
-      title: "Farm-to-Port Traceability",
+      title: "Direct Regional Sourcing",
       description:
-        "Every incoming batch is logged with estate coordinates, harvest dates, and farmer ID. Importers receive full traceability documentation for every container.",
+        "We source directly from farmer clusters and cooperatives across Kerala's spice belts and verified agricultural centers like Erode for turmeric, ensuring authentic provenance.",
       icon: ShieldCheck,
     },
     {
       step: "02",
-      title: "Steam Sterilization & Destoning",
+      title: "Mechanical Cleaning & Destoning",
       description:
-        "Non-irradiated, high-temperature short-time (HTST) steam sterilization eliminates microbial load while preserving fragile essential oils and natural aromatics.",
+        "Modern grading, destoning, and air-aspiration remove dust and foreign matter, preserving the natural color, aroma, and seed integrity of whole spices.",
       icon: Layers,
     },
     {
       step: "03",
-      title: "Chromatographic Lab Verification",
+      title: "Analytical Quality Verification",
       description:
-        "Every production lot is analyzed by HPLC and GC-MS for active phytochemicals (curcumin, piperine, eugenol) and screened for zero synthetic adulterants or pesticides.",
+        "Consignments are inspected for moisture percentage, physical density, natural piperine or curcumin levels, and freedom from artificial colorants.",
       icon: FlaskConical,
     },
     {
       step: "04",
-      title: "Nitrogen Barrier Packaging",
+      title: "Protective Export Packaging",
       description:
-        "Multi-layer vacuum pouches, nitrogen-flushed foil bags, and heavy-gauge kraft master cartons ensure zero moisture ingress or oxidation across ocean transits.",
+        "Heavy-duty multi-wall kraft paper sacks, double-lined HDPE bags, or vacuum barrier pouches safeguard spice freshness against tropical humidity during sea transit.",
       icon: Microscope,
     },
   ];
 
   const standards = [
-    { name: "ASTA Cleanliness Specs", org: "American Spice Trade Association" },
-    { name: "ESA Quality Minima", org: "European Spice Association" },
-    { name: "ISO 22000:2018", org: "Food Safety Management" },
-    { name: "HACCP Certified", org: "Critical Control Point Standard" },
-    { name: "Spices Board India", org: "Ministry of Commerce Registered" },
-    { name: "US-FDA Registered", org: "Import Facility Compliance" },
+    { name: "Government Registered Exporter", org: "Cochin Port, Kerala" },
+    { name: "Commercial Lab Testing", org: "Analytical Parameter Verification" },
+    { name: "Phytosanitary Certification", org: "Plant Quarantine Authorities" },
+    { name: "Certificate of Origin", org: "Official Chamber & Trade Authorities" },
+    { name: "Non-Irradiated Processing", org: "Hygienic Clean Handling" },
+    { name: "Direct Port Logistics", org: "Cochin Seaport (ICTT Vallarpadam)" },
   ];
 
   return (
@@ -50,15 +50,15 @@ export default function QualityCommitment() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
           <div className="lg:col-span-7">
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#526747] mb-3 block">
-              Sourcing & Quality Commitment
+              Sourcing & Quality Care
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#24251F] leading-tight">
-              Export-Grade Precision: From Plant to Port
+              Careful Handling: From Indian Farms to Overseas Ports
             </h2>
           </div>
           <div className="lg:col-span-5">
             <p className="text-base text-[#24251F]/75 leading-relaxed">
-              We operate according to stringent international food safety standards. Each consignment is backed by a comprehensive Certificate of Analysis (COA) issued prior to customs dispatch.
+              We focus on product integrity, honest origin labeling, and dependable bulk delivery. Each export consignment is accompanied by standard commercial export documentation.
             </p>
           </div>
         </div>
@@ -104,10 +104,10 @@ export default function QualityCommitment() {
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-[#24251F]/90 backdrop-blur-md border border-white/10 text-[#FAF7F0]">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#D6A441] mb-1">
                   <CheckCircle2 size={14} className="text-[#D6A441]" />
-                  Lab Tested Prior to Dispatch
+                  Quality Checked Prior to Dispatch
                 </div>
                 <p className="text-xs text-[#FAF7F0]/80 leading-relaxed">
-                  Testing includes volatile oil assay, moisture titration, bulk density, micro-biological screening (Salmonella, E. coli), and heavy metal traces.
+                  Batches are sampled and verified for moisture levels, bulk density, visual cleanliness, and freedom from extraneous materials per commercial contracts.
                 </p>
               </div>
             </div>
