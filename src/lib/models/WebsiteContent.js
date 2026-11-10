@@ -11,7 +11,6 @@ const WebsiteContentSchema = new mongoose.Schema(
     page: {
       type: String,
       required: true,
-      enum: ["home", "about", "products", "sourcing", "ports", "contact", "global"],
       default: "home",
     },
     title: {

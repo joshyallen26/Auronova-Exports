@@ -31,8 +31,17 @@ export default function AdminContentPage() {
   const sectionKeys = [
     { key: "home_intro", page: "Home", label: "Company Introduction & Story" },
     { key: "home_heritage", page: "Home", label: "Kerala Heritage & Regional Terroir" },
+    { key: "about_details", page: "About", label: "About Us Story, Year & Markets" },
     { key: "about_mission_vision", page: "About", label: "Mission, Vision & Core Values" },
+    { key: "sourcing_steps", page: "Sourcing", label: "Sourcing 6-Step Framework" },
     { key: "sourcing_overview", page: "Sourcing", label: "Farm-to-Vessel Sourcing Pillars" },
+    { key: "shipping_pricing", page: "Shipping", label: "Shipping, Incoterms, MOQ & Packaging" },
+    { key: "faq_content", page: "FAQ", label: "FAQ Categories & Q&A Content" },
+    { key: "business_credentials", page: "Compliance", label: "Business Registrations & Credentials" },
+    { key: "legal_privacy", page: "Legal", label: "Privacy Policy Content" },
+    { key: "legal_terms", page: "Legal", label: "Terms & Conditions Content" },
+    { key: "legal_shipping", page: "Legal", label: "Shipping Policy Content" },
+    { key: "global_footer", page: "Global", label: "Global Footer Configuration" },
   ];
 
   const currentItem = contentMap[activeSection] || {

@@ -7,6 +7,7 @@ const initialForm = {
   email: "",
   company: "",
   country: "",
+  phone: "",
   quantity: "",
   message: "",
 };
@@ -22,6 +23,7 @@ export default function EnquiryModal({ spice, isOpen, onClose }) {
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Valid email required";
     if (!form.country.trim()) e.country = "Country is required";
+    if (!form.phone.trim()) e.phone = "Phone/WhatsApp is required";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -178,7 +180,7 @@ export default function EnquiryModal({ spice, isOpen, onClose }) {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      <Field label="Company">
+                      <Field label="Company Name">
                         <input
                           name="company"
                           value={form.company}
@@ -188,7 +190,20 @@ export default function EnquiryModal({ spice, isOpen, onClose }) {
                           style={{ color: "#3D1B08" }}
                         />
                       </Field>
-                      <Field label="Country *" error={errors.country}>
+                      <Field label="Phone / WhatsApp *" error={errors.phone}>
+                        <input
+                          name="phone"
+                          value={form.phone}
+                          onChange={handleChange}
+                          placeholder="+49 40 123456"
+                          className={`${inputBase} ${errors.phone ? "border-red-300 focus:ring-red-200" : "border-[#E8D5BE] focus:ring-[#D4A017]/30"}`}
+                          style={{ color: "#3D1B08" }}
+                        />
+                      </Field>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <Field label="Country / Port *" error={errors.country}>
                         <input
                           name="country"
                           value={form.country}
@@ -198,18 +213,17 @@ export default function EnquiryModal({ spice, isOpen, onClose }) {
                           style={{ color: "#3D1B08" }}
                         />
                       </Field>
+                      <Field label="Quantity Required">
+                        <input
+                          name="quantity"
+                          value={form.quantity}
+                          onChange={handleChange}
+                          placeholder="e.g. 14 MT or 500 kg"
+                          className={`${inputBase} border-[#E8D5BE] focus:ring-[#D4A017]/30`}
+                          style={{ color: "#3D1B08" }}
+                        />
+                      </Field>
                     </div>
-
-                    <Field label="Quantity Required">
-                      <input
-                        name="quantity"
-                        value={form.quantity}
-                        onChange={handleChange}
-                        placeholder="e.g. 500 kg / month"
-                        className={`${inputBase} border-[#E8D5BE] focus:ring-[#D4A017]/30`}
-                        style={{ color: "#3D1B08" }}
-                      />
-                    </Field>
 
                     <Field label="Additional Requirements">
                       <textarea

@@ -368,18 +368,48 @@ export default function AdminEnquiriesPage() {
                 </span>
               </div>
               <div>
-                <span className="text-[#24251F]/60 block">Requested Commodity:</span>
+                <span className="text-[#24251F]/60 block">Requested Commodity / Products:</span>
                 <span className="font-semibold text-[#4A2C20] block mt-0.5">
-                  {selectedEnquiry.product}
+                  {Array.isArray(selectedEnquiry.products) && selectedEnquiry.products.length > 0
+                    ? selectedEnquiry.products.join(", ")
+                    : selectedEnquiry.product}
                 </span>
               </div>
               <div>
-                <span className="text-[#24251F]/60 block">Estimated Tonnage:</span>
+                <span className="text-[#24251F]/60 block">Quantity & Incoterm:</span>
                 <span className="font-semibold text-[#24251F] block mt-0.5">
-                  {selectedEnquiry.volume || "General Container"}
+                  {selectedEnquiry.volume || "General Container"}{" "}
+                  {selectedEnquiry.incoterm ? `· Term: ${selectedEnquiry.incoterm}` : ""}
                 </span>
               </div>
             </div>
+
+            {/* Uploaded Specification File */}
+            {selectedEnquiry.fileAttachmentUrl && (
+              <div className="p-4 rounded-xl bg-amber-50/60 border border-amber-200/80 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2.5 truncate">
+                  <FileText size={20} className="text-[#4A2C20] flex-shrink-0" />
+                  <div>
+                    <span className="text-xs font-bold text-[#24251F] block">
+                      Buyer Specification File Attached
+                    </span>
+                    <span className="text-[11px] text-[#4A2C20]/80 truncate block">
+                      {selectedEnquiry.fileAttachmentName || "Specification Document"}
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href={selectedEnquiry.fileAttachmentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-[#FAF7F0] bg-[#4A2C20] hover:bg-[#351E16] shadow-sm transition-colors flex-shrink-0"
+                >
+                  <ExternalLink size={13} className="text-[#D6A441]" />
+                  <span>Download / View File</span>
+                </a>
+              </div>
+            )}
 
             {/* Customer Message */}
             <div>

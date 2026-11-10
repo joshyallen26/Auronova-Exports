@@ -160,8 +160,10 @@ export const spices = [
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
   { label: "Products", href: "/products" },
+  { label: "Sourcing & Quality", href: "/sourcing" },
+  { label: "Shipping & Pricing", href: "/shipping" },
+  { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact / Quote", href: "/contact" },
 ];

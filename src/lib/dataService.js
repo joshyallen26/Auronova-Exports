@@ -402,7 +402,13 @@ export async function getAllContent() {
   } catch (e) {}
 
   const store = readStore();
-  return store.content || {};
+  const content = { ...(store.content || {}) };
+  for (const item of initialWebsiteContent) {
+    if (!content[item.sectionKey]) {
+      content[item.sectionKey] = item;
+    }
+  }
+  return content;
 }
 
 export async function getContentBySection(sectionKey) {
@@ -415,7 +421,11 @@ export async function getContentBySection(sectionKey) {
   } catch (e) {}
 
   const store = readStore();
-  return store.content?.[sectionKey] || null;
+  if (store.content?.[sectionKey]) {
+    return store.content[sectionKey];
+  }
+  const defaultSec = initialWebsiteContent.find((s) => s.sectionKey === sectionKey);
+  return defaultSec || null;
 }
 
 export async function saveContent(sectionKey, data) {
@@ -455,7 +465,13 @@ export async function getSeoSettings() {
   } catch (e) {}
 
   const store = readStore();
-  return Object.values(store.seo || {});
+  const map = { ...(store.seo || {}) };
+  for (const s of initialSeoSettings) {
+    if (!map[s.pageKey]) {
+      map[s.pageKey] = s;
+    }
+  }
+  return Object.values(map);
 }
 
 export async function getSeoSetting(pageKey) {

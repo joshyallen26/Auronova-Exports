@@ -114,14 +114,16 @@ export default function AdminDashboardPage() {
         <h2 className="text-xs font-bold uppercase tracking-wider text-[#4A2C20] mb-4">
           Quick Management Shortcuts
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           {[
             { label: "Home Hero", href: "/admin/home", desc: "Hero Slider & CTAs" },
-            { label: "About Us", href: "/admin/about", desc: "Mission, Vision & Values" },
-            { label: "Products CRUD", href: "/admin/products", desc: "Add / Edit Spices" },
+            { label: "About Us", href: "/admin/about", desc: "Story & Heritage" },
+            { label: "Sourcing", href: "/admin/sourcing", desc: "Farm & Quality Steps" },
+            { label: "Shipping", href: "/admin/shipping", desc: "Incoterms & MOQ" },
+            { label: "Credentials", href: "/admin/credentials", desc: "APEDA & Spices Board" },
+            { label: "FAQ Content", href: "/admin/faq", desc: "Categories & Answers" },
+            { label: "Legal Policies", href: "/admin/legal", desc: "Privacy & Terms" },
             { label: "18 Ports", href: "/admin/ports", desc: "Kerala Port Network" },
-            { label: "SEO Config", href: "/admin/seo", desc: "Meta & OpenGraph" },
-            { label: "Media Library", href: "/admin/media", desc: "Upload Spice Assets" },
           ].map((action) => (
             <Link
               key={action.href}

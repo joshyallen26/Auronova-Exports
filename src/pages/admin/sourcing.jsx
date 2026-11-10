@@ -57,17 +57,36 @@ export default function AdminSourcingPage() {
     e.preventDefault();
     try {
       setSaving(true);
-      const res = await fetch("/api/admin/content", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          sectionKey: "sourcing_overview",
-          page: "sourcing",
-          data,
+      const [res1, res2] = await Promise.all([
+        fetch("/api/admin/content", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sectionKey: "sourcing_overview",
+            page: "sourcing",
+            data,
+          }),
         }),
-      });
-      const resData = await res.json();
-      if (!res.ok || !resData.success) throw new Error(resData.message || "Failed to save.");
+        fetch("/api/admin/content", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sectionKey: "sourcing_steps",
+            page: "sourcing",
+            data: {
+              headline: data.headline,
+              intro: data.intro,
+              steps: (data.pillars || []).map((p, i) => ({
+                number: p.step || `0${i + 1}`,
+                title: p.title,
+                description: p.desc,
+              })),
+            },
+          }),
+        }),
+      ]);
+
+      if (!res1.ok || !res2.ok) throw new Error("Failed to save sourcing framework.");
 
       setToast({ type: "success", message: "Sourcing framework content saved." });
     } catch (err) {

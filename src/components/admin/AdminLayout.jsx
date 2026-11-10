@@ -16,6 +16,7 @@ import {
   Sliders,
   Image as ImageIcon,
   Settings,
+  PanelBottom,
   LogOut,
   Menu,
   X,
@@ -26,6 +27,10 @@ import {
   Shield,
   CheckCircle2,
   AlertCircle,
+  Ship,
+  HelpCircle,
+  Scale,
+  ShieldCheck,
 } from "lucide-react";
 
 const navigationGroups = [
@@ -39,14 +44,19 @@ const navigationGroups = [
       { label: "Website Content", href: "/admin/content", icon: FileText },
       { label: "Home Page", href: "/admin/home", icon: Home },
       { label: "About Us", href: "/admin/about", icon: Info },
-      { label: "Sourcing Framework", href: "/admin/sourcing", icon: Compass },
+      { label: "Sourcing & Quality", href: "/admin/sourcing", icon: Compass },
+      { label: "Shipping & Pricing", href: "/admin/shipping", icon: Ship },
+      { label: "FAQ Knowledge Base", href: "/admin/faq", icon: HelpCircle },
+      { label: "Legal Policies", href: "/admin/legal", icon: Scale },
       { label: "Kerala Ports (18)", href: "/admin/ports", icon: Anchor },
+      { label: "Footer Settings", href: "/admin/footer", icon: PanelBottom },
     ],
   },
   {
-    title: "CATALOGUE & MEDIA",
+    title: "CATALOGUE & CREDENTIALS",
     items: [
       { label: "Products Catalogue", href: "/admin/products", icon: Package },
+      { label: "Export Credentials", href: "/admin/credentials", icon: ShieldCheck },
       { label: "Media Library", href: "/admin/media", icon: ImageIcon },
     ],
   },

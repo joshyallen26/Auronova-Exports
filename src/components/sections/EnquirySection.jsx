@@ -8,7 +8,8 @@ export default function EnquirySection() {
     email: "",
     company: "",
     country: "",
-    spice: "Malabar Black Pepper",
+    phone: "",
+    spice: "Black Pepper",
     volume: "20ft FCL Container",
     incoterm: "CIF (Destination Port)",
     message: "",
@@ -216,11 +217,12 @@ export default function EnquirySection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-xs font-semibold uppercase tracking-wider text-[#4A2C20] block mb-1.5">
-                        Company Name
+                        Company Name *
                       </label>
                       <input
                         type="text"
                         name="company"
+                        required
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="e.g. Hamburg Gourmet Imports GmbH"
@@ -230,18 +232,33 @@ export default function EnquirySection() {
 
                     <div>
                       <label className="text-xs font-semibold uppercase tracking-wider text-[#4A2C20] block mb-1.5">
-                        Destination Country *
+                        Phone / WhatsApp *
                       </label>
                       <input
-                        type="text"
-                        name="country"
+                        type="tel"
+                        name="phone"
                         required
-                        value={formData.country}
+                        value={formData.phone}
                         onChange={handleChange}
-                        placeholder="e.g. Germany / United States"
+                        placeholder="e.g. +49 40 12345678"
                         className="w-full px-3.5 py-2.5 rounded-lg border border-[#E8E0D2] bg-white text-sm text-[#24251F] focus:outline-none focus:ring-2 focus:ring-[#D6A441]"
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-[#4A2C20] block mb-1.5">
+                      Destination Country / Port *
+                    </label>
+                    <input
+                      type="text"
+                      name="country"
+                      required
+                      value={formData.country}
+                      onChange={handleChange}
+                      placeholder="e.g. Hamburg, Germany or Jebel Ali, UAE"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-[#E8E0D2] bg-white text-sm text-[#24251F] focus:outline-none focus:ring-2 focus:ring-[#D6A441]"
+                    />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

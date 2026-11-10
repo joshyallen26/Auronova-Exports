@@ -33,14 +33,33 @@ const EnquirySchema = new mongoose.Schema(
       default: "General Enquiry",
       trim: true,
     },
+    products: {
+      type: [String],
+      default: [],
+    },
     volume: {
       type: String,
       default: "",
       trim: true,
     },
+    unit: {
+      type: String,
+      default: "MT",
+      trim: true,
+    },
     incoterm: {
       type: String,
       default: "FOB Cochin",
+      trim: true,
+    },
+    fileAttachmentUrl: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+    fileAttachmentName: {
+      type: String,
+      default: "",
       trim: true,
     },
     message: {

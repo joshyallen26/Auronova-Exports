@@ -77,39 +77,41 @@ export default function Header({ onOpenQuote }) {
           </Link>
 
           {/* Desktop Links */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const active = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                    active
-                      ? "text-[#4A2C20] font-semibold bg-[#4A2C20]/5"
-                      : "text-[#24251F]/80 hover:text-[#4A2C20] hover:bg-[#4A2C20]/5"
-                  }`}
-                >
-                  {link.label}
-                  {active && (
-                    <motion.span
-                      layoutId="nav-active-pill"
-                      className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#D6A441] rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              );
-            })}
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+            {navLinks
+              .filter((l) => l.href !== "/contact")
+              .map((link) => {
+                const active = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative px-3 xl:px-3.5 py-2 text-xs xl:text-sm font-medium rounded-lg transition-colors duration-200 whitespace-nowrap ${
+                      active
+                        ? "text-[#4A2C20] font-semibold bg-[#4A2C20]/5"
+                        : "text-[#24251F]/80 hover:text-[#4A2C20] hover:bg-[#4A2C20]/5"
+                    }`}
+                  >
+                    {link.label}
+                    {active && (
+                      <motion.span
+                        layoutId="nav-active-pill"
+                        className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#D6A441] rounded-full"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
           </nav>
 
           {/* Actions */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-[#FAF7F0] bg-[#4A2C20] hover:bg-[#351E16] shadow-sm transition-all duration-200"
+              className="inline-flex items-center gap-2 px-4 xl:px-5 py-2.5 rounded-lg text-xs xl:text-sm font-semibold text-[#FAF7F0] bg-[#4A2C20] hover:bg-[#351E16] shadow-sm transition-all duration-200 whitespace-nowrap"
             >
-              Request a Quote
+              Contact / Quote
               <ArrowRight size={14} className="text-[#D6A441]" />
             </Link>
           </div>
@@ -117,7 +119,7 @@ export default function Header({ onOpenQuote }) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-lg text-[#24251F] hover:bg-[#4A2C20]/5 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-[#24251F] hover:bg-[#4A2C20]/5 transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Globe, ArrowRight, ShieldCheck, Award } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, ArrowRight, ShieldCheck, Award, MessageCircle } from "lucide-react";
 import { navLinks, spices as defaultSpices } from "@/data/spices";
 import { useWebsiteData } from "@/context/WebsiteDataContext";
 
@@ -7,10 +7,44 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { products: dynamicProducts, integrations, content } = useWebsiteData();
 
+  const footerData = content?.global_footer?.content || {};
+
   const spices = dynamicProducts && dynamicProducts.length > 0 ? dynamicProducts : defaultSpices;
-  const phone = integrations?.phone || content?.contact?.phone || "+91 (484) 290-0000 / +91 94000 00000";
-  const email = integrations?.email || content?.contact?.email || "exports@auronovaexports.com";
-  const address = integrations?.address || content?.contact?.address || "Auronova Exports Pvt. Ltd.\nSpice Trade Centre, Cochin Port Zone\nKochi, Kerala 682 001, India";
+  const companyName = integrations?.companyName || "Auronova Exports Pvt. Ltd.";
+  const phone = footerData.customPhone || integrations?.phone || content?.contact?.phone || "+91 (484) 290-0000";
+  const whatsapp = integrations?.whatsappNumber || "+91 94000 00000";
+  const email = footerData.customEmail || integrations?.email || content?.contact?.email || "exports@auronovaexports.com";
+  const address = footerData.customAddress || integrations?.officeAddress || content?.contact?.address || "Auronova Exports Pvt. Ltd.\nSpice Trade Centre, Cochin Port Zone\nKochi, Kerala 682 001, India";
+  const brandTagline = footerData.brandTagline || "Connecting international buyers directly with authentic Indian spices and agricultural products, with sourcing operations and primary identity rooted in Kerala. Cleaned, graded, and exported directly through Cochin Port.";
+  const showTrustBadge = footerData.showTrustBadge !== false;
+  const trustBadgeText = footerData.trustBadgeText || "Government Registered Export Merchant · Cochin Port, Kerala";
+  const navigationTitle = footerData.navigationTitle || "Navigation";
+  const productsTitle = footerData.productsTitle || "Export Spices";
+  const headquartersTitle = footerData.headquartersTitle || "Export Headquarters";
+  const portOfLadingLabel = footerData.portOfLadingLabel || "Primary Port of Lading:";
+  const portOfLadingValue = footerData.portOfLadingValue || integrations?.portOfLading || "Cochin Seaport (ICTT / INCOK) & CIAL Air Cargo";
+  const copyrightText = footerData.copyrightText || `${companyName} All rights reserved. Registered in Kochi, Kerala.`;
+  const showSocialLinks = footerData.showSocialLinks !== false;
+  const showRfqQuickLink = footerData.showRfqQuickLink !== false;
+  const rfqQuickLinkLabel = footerData.rfqQuickLinkLabel || "Request RFQ";
+
+  const legalLinks = [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Shipping Policy", href: "/shipping-policy" },
+    { label: "Sitemap", href: "/sitemap" },
+  ];
+
+  const bottomLinks = Array.isArray(footerData.bottomLinks) && footerData.bottomLinks.length > 0
+    ? footerData.bottomLinks
+    : [
+        { label: "About", href: "/about" },
+        { label: "Sourcing & Quality", href: "/sourcing" },
+        { label: "Shipping & Pricing", href: "/shipping" },
+        { label: "FAQ", href: "/faq" },
+        { label: "Compliance", href: "/certifications" },
+        { label: "Contact", href: "/contact" },
+      ];
 
   return (
     <footer className="bg-[#1C1D18] text-[#FAF7F0] border-t border-[#33322B] relative overflow-hidden">
@@ -33,19 +67,21 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm text-[#FAF7F0]/70 leading-relaxed mb-6 font-normal">
-              Connecting international buyers directly with authentic Indian spices and agricultural products, with sourcing operations and primary identity rooted in Kerala. Cleaned, graded, and exported directly through Cochin Port.
+              {brandTagline}
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FAF7F0]/5 border border-white/10 text-xs text-[#FAF7F0]/80">
-              <ShieldCheck size={14} className="text-[#D6A441]" />
-              <span>Government Registered Export Merchant</span>
-            </div>
+            {showTrustBadge && (
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FAF7F0]/5 border border-white/10 text-xs text-[#FAF7F0]/80">
+                <ShieldCheck size={14} className="text-[#D6A441]" />
+                <span>{trustBadgeText}</span>
+              </div>
+            )}
           </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
             <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-[#D6A441] mb-4">
-              Navigation
+              {navigationTitle}
             </h4>
             <ul className="space-y-2.5 text-xs text-[#FAF7F0]/75">
               {navLinks.map((link) => (
@@ -58,18 +94,20 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="#rfq-section" className="hover:text-[#D6A441] transition-colors inline-block">
-                  Request RFQ
-                </Link>
-              </li>
+              {showRfqQuickLink && (
+                <li>
+                  <Link href="#rfq-section" className="hover:text-[#D6A441] transition-colors inline-block">
+                    {rfqQuickLinkLabel}
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 
           {/* Export Portfolio */}
           <div className="lg:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-[#D6A441] mb-4">
-              Export Spices
+              {productsTitle}
             </h4>
             <ul className="space-y-2.5 text-xs text-[#FAF7F0]/75">
               {spices.map((spice) => (
@@ -89,7 +127,7 @@ export default function Footer() {
           {/* Trade Office & Dispatch */}
           <div className="lg:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-[#D6A441] mb-4">
-              Export Headquarters
+              {headquartersTitle}
             </h4>
             <ul className="space-y-3 text-xs text-[#FAF7F0]/75">
               <li className="flex items-start gap-2.5">
@@ -106,28 +144,49 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={15} className="text-[#D6A441] flex-shrink-0" />
-                <a href={`tel:${phone.split("/")[0].trim().replace(/[^+\d]/g, "")}`} className="hover:text-[#D6A441] transition-colors">
+                <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} className="hover:text-[#D6A441] transition-colors">
                   {phone}
                 </a>
               </li>
+              {whatsapp && (
+                <li className="flex items-center gap-2.5">
+                  <MessageCircle size={15} className="text-[#D6A441] flex-shrink-0" />
+                  <a
+                    href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#D6A441] transition-colors"
+                  >
+                    WhatsApp: {whatsapp}
+                  </a>
+                </li>
+              )}
             </ul>
 
             <div className="mt-5 pt-4 border-t border-[#33322B]">
-              <span className="text-[11px] text-[#FAF7F0]/50 block">Primary Port of Lading:</span>
+              <span className="text-[11px] text-[#FAF7F0]/50 block">{portOfLadingLabel}</span>
               <span className="text-xs text-[#FAF7F0] font-medium block mt-0.5">
-                Cochin Seaport (ICTT / INCOK) & CIAL Air Cargo
+                {portOfLadingValue}
               </span>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar: Copyright & Compliance */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FAF7F0]/50">
-          <p>© {currentYear} Auronova Exports Pvt. Ltd. All rights reserved. Registered in Kochi, Kerala.</p>
-          <div className="flex items-center gap-6">
-            <Link href="/about" className="hover:text-[#FAF7F0] transition-colors">About Company</Link>
-            <Link href="/products" className="hover:text-[#FAF7F0] transition-colors">Specifications</Link>
-            <Link href="/contact" className="hover:text-[#FAF7F0] transition-colors">Contact Us</Link>
+        <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-5 text-xs text-[#FAF7F0]/60">
+          <p>© {currentYear} {copyrightText}</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            {bottomLinks.map((link, idx) => (
+              <Link key={`bot-${idx}`} href={link.href} className="hover:text-[#FAF7F0] transition-colors">
+                {link.label}
+              </Link>
+            ))}
+            <span className="hidden sm:inline text-white/20">|</span>
+            {legalLinks.map((link, idx) => (
+              <Link key={`legal-${idx}`} href={link.href} className="text-[#D6A441]/80 hover:text-[#D6A441] transition-colors">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
