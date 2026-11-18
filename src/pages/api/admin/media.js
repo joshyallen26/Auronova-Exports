@@ -85,8 +85,10 @@ async function handler(req, res) {
 
     try {
       if (fileName) {
-        const filePath = path.join(process.cwd(), "public", "uploads", fileName);
-        if (fs.existsSync(filePath)) {
+        const safeName = path.basename(fileName);
+        const uploadDir = path.join(process.cwd(), "public", "uploads");
+        const filePath = path.join(uploadDir, safeName);
+        if (fs.existsSync(filePath) && filePath.startsWith(uploadDir)) {
           fs.unlinkSync(filePath);
         }
       }

@@ -49,7 +49,7 @@ export default function AboutPage() {
         {
           region: "North America",
           countries: "United States, Canada",
-          focus: "Industrial food processors, extraction houses, private label repackagers, and spice distributors.",
+          focus: "Industrial food manufacturers, private label repackagers, commercial blenders, and wholesale spice distributors.",
         },
         {
           region: "Southeast Asia & Asia-Pacific",

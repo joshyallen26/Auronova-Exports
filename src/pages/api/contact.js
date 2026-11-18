@@ -1,6 +1,31 @@
 import nodemailer from "nodemailer";
 import { saveEnquiry } from "@/lib/dataService";
 
+// In-memory cache for duplicate submission prevention
+const recentSubmissions = new Map();
+const DUP_WINDOW_MS = 30 * 1000; // 30 seconds
+
+function checkDuplicateSubmission(email, messageKey) {
+  const now = Date.now();
+  const key = `${email.toLowerCase()}_${messageKey}`;
+  const prev = recentSubmissions.get(key);
+
+  if (prev && now - prev.timestamp < DUP_WINDOW_MS) {
+    return { isDuplicate: true, savedId: prev.id };
+  }
+
+  // Cleanup old entries
+  if (recentSubmissions.size > 200) {
+    for (const [k, v] of recentSubmissions.entries()) {
+      if (now - v.timestamp > DUP_WINDOW_MS * 2) {
+        recentSubmissions.delete(k);
+      }
+    }
+  }
+
+  return { isDuplicate: false, key };
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ success: false, message: "Method not allowed" });
@@ -89,6 +114,17 @@ export default async function handler(req, res) {
   const forwarded = req.headers["x-forwarded-for"];
   const ip = typeof forwarded === "string" ? forwarded.split(/, /)[0] : req.socket?.remoteAddress || "";
 
+  // Duplicate submission check within 30s
+  const messageSignature = `${selectedProducts.sort().join("_")}_${userMessage.slice(0, 50)}`;
+  const dupCheck = checkDuplicateSubmission(clientEmail, messageSignature);
+  if (dupCheck.isDuplicate) {
+    return res.status(200).json({
+      success: true,
+      message: "Commercial export quotation request already registered. Our trade desk will issue a formal proforma quote within 24 business hours.",
+      enquiryId: dupCheck.savedId,
+    });
+  }
+
   try {
     // 3. Save into MongoDB / Persistent data store
     const saved = await saveEnquiry({
@@ -108,6 +144,10 @@ export default async function handler(req, res) {
       status: "new",
       ip,
     });
+
+    if (dupCheck.key) {
+      recentSubmissions.set(dupCheck.key, { timestamp: Date.now(), id: saved._id });
+    }
 
     // 4. Optional Server-Side Email Notifications (Company Notification & Buyer Confirmation)
     const smtpHost = process.env.SMTP_HOST;

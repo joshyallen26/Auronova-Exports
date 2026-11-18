@@ -46,13 +46,13 @@ const defaultSteps = [
   {
     number: "03",
     title: "Post-Harvest Handling & Controlled Drying",
-    subtitle: "Moisture Control & Essential Oil Preservation",
+    subtitle: "Moisture Control & Natural Aroma Retention",
     description:
       "Proper drying is critical to preserving volatile aromatic compounds and preventing mold formation. Peppercorns and turmeric fingers are sun-dried on hygienic, raised platforms or dried in controlled low-temperature mechanical driers to achieve optimal export moisture thresholds (under 11–12%).",
     points: [
       "Clean sun-drying on certified platforms or mechanical dehydrators",
       "Strict moisture threshold controls preventing moisture damage",
-      "Preservation of delicate volatile essential oils (piperine, cineole, curcumin)",
+      "Retention of intrinsic botanical richness (piperine, cineole, curcumin)",
     ],
   },
   {

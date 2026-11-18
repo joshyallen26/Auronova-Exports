@@ -38,6 +38,7 @@ yarn-error.log*
 
 # local data store & uploads
 /.data/
+/storage/
 /public/uploads/*
 !/public/uploads/.gitkeep
 

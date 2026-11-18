@@ -1,0 +1,13 @@
+# Auronova Exports - Search Engine Directive
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /_next/
+
+# Host & Sitemap
+Host: https://www.auronovaexports.com
+Sitemap: https://www.auronovaexports.com/sitemap.xml
+

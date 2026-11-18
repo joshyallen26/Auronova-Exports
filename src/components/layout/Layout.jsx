@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
+import CookieConsent from "@/components/ui/CookieConsent";
 import { useWebsiteData } from "@/context/WebsiteDataContext";
 import { MessageCircle } from "lucide-react";
 
@@ -54,6 +55,7 @@ export default function Layout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieConsent />
 
         {/* Global Floating WhatsApp Contact Button */}
         {waNumber && (

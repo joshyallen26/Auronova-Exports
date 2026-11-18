@@ -6,8 +6,8 @@ import { Lock, Mail, ArrowRight, ShieldCheck, ExternalLink, AlertCircle } from "
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@auronovaexports.com");
-  const [password, setPassword] = useState("Auronova@Admin2026");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -69,7 +69,7 @@ export default function AdminLoginPage() {
             </div>
           </Link>
 
-          {/* Prominent Live Website Button */}
+          {/* Live Website Button */}
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/15 text-[#FAF7F0] border border-white/15 transition-colors shadow-sm"
@@ -103,7 +103,7 @@ export default function AdminLoginPage() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-xs font-semibold uppercase tracking-wider text-[#D6A441] block mb-1.5">
+                <label className="block text-xs font-semibold text-[#FAF7F0]/80 uppercase tracking-wider mb-2">
                   Admin Email
                 </label>
                 <div className="relative">
@@ -114,18 +114,27 @@ export default function AdminLoginPage() {
                   <input
                     type="email"
                     required
+                    autoComplete="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="admin@auronovaexports.com"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#24251F] border border-[#3D3A30] text-sm text-[#FAF7F0] focus:outline-none focus:ring-2 focus:ring-[#D6A441] transition-all"
+                    placeholder="name@auronovaexports.com"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#24251F] border border-[#3D3A30] text-sm text-[#FAF7F0] placeholder-[#FAF7F0]/30 focus:outline-none focus:ring-2 focus:ring-[#D6A441] transition-all"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-xs font-semibold uppercase tracking-wider text-[#D6A441] block mb-1.5">
-                  Password
-                </label>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-xs font-semibold text-[#FAF7F0]/80 uppercase tracking-wider">
+                    Password
+                  </label>
+                  <Link
+                    href="/admin/forgot-password"
+                    className="text-xs text-[#D6A441] hover:underline"
+                  >
+                    Forgot Password?
+                  </Link>
+                </div>
                 <div className="relative">
                   <Lock
                     size={16}
@@ -134,10 +143,11 @@ export default function AdminLoginPage() {
                   <input
                     type="password"
                     required
+                    autoComplete="current-password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••••••"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#24251F] border border-[#3D3A30] text-sm text-[#FAF7F0] focus:outline-none focus:ring-2 focus:ring-[#D6A441] transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#24251F] border border-[#3D3A30] text-sm text-[#FAF7F0] placeholder-[#FAF7F0]/30 focus:outline-none focus:ring-2 focus:ring-[#D6A441] transition-all"
                   />
                 </div>
               </div>
@@ -146,7 +156,7 @@ export default function AdminLoginPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#D6A441] text-[#24251F] hover:bg-[#E4B85C] shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#D6A441] text-[#24251F] hover:bg-[#E4B85C] shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                 >
                   {loading ? (
                     "Authenticating..."
@@ -160,16 +170,11 @@ export default function AdminLoginPage() {
               </div>
             </form>
 
-            {/* Quick credentials assist box */}
-            <div className="mt-6 pt-5 border-t border-[#3D3A30] text-[11px] text-[#FAF7F0]/60 space-y-1.5">
-              <div className="flex items-center justify-between text-[#D6A441] font-semibold">
-                <span>Default Credentials:</span>
-                <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-[#FAF7F0]/80">
-                  Pre-filled
-                </span>
-              </div>
-              <p className="font-mono text-[#FAF7F0]/75">Email: admin@auronovaexports.com</p>
-              <p className="font-mono text-[#FAF7F0]/75">Pass: Auronova@Admin2026</p>
+            <div className="mt-8 pt-6 border-t border-[#3D3A30] text-center">
+              <p className="text-[11px] text-[#FAF7F0]/50 flex items-center justify-center gap-1.5">
+                <ShieldCheck size={14} className="text-[#526747]" />
+                <span>Protected Commercial Trade Portal · End-to-End Encrypted</span>
+              </p>
             </div>
           </div>
         </main>

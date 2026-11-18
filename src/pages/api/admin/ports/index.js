@@ -8,7 +8,7 @@ async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-    const { name, classification, status, district, details, spiceExportRole } = req.body || {};
+    const { name, district, details } = req.body || {};
     if (!name || !district || !details) {
       return res.status(400).json({
         success: false,

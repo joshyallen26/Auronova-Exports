@@ -51,38 +51,7 @@ function ensureStore() {
         return acc;
       }, {}),
       integrations: initialIntegrations,
-      enquiries: [
-        {
-          _id: "enq_sample_1",
-          name: "Johannes Becker",
-          email: "j.becker@hamburgspices.de",
-          company: "Hanseatic Spice Imports GmbH",
-          country: "Germany",
-          phone: "+49 40 12345678",
-          product: "Malabar Black Pepper",
-          volume: "20ft FCL Container (~14MT)",
-          incoterm: "CIF Hamburg",
-          message: "Looking for high-density Tellicherry Garbled black peppercorns for our spice packaging line. Please furnish proforma invoice and sample specs.",
-          status: "in_progress",
-          notes: "Sample dispatch scheduled via DHL courier.",
-          createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
-        },
-        {
-          _id: "enq_sample_2",
-          name: "Claire Fontaine",
-          email: "c.fontaine@aromatics-paris.fr",
-          company: "Gourmet Aromatiques SARL",
-          country: "France",
-          phone: "+33 1 42680000",
-          product: "Alleppey Green Cardamom",
-          volume: "500kg Trial Air Consignment",
-          incoterm: "CIF Paris CDG",
-          message: "Interested in Alleppey Green Extra Bold (AGEB 8mm+) green cardamom. Please send current price quotation and harvest details.",
-          status: "new",
-          notes: "",
-          createdAt: new Date(Date.now() - 3600000 * 5).toISOString(),
-        },
-      ],
+      enquiries: [],
       media: [
         {
           _id: "media_1",
@@ -114,20 +83,80 @@ function ensureStore() {
 
 function readStore() {
   ensureStore();
+  let data = null;
   try {
     const raw = fs.readFileSync(STORE_FILE, "utf-8");
-    return JSON.parse(raw);
+    data = JSON.parse(raw);
   } catch (e) {
-    return {
-      products: [],
-      ports: [],
-      content: {},
-      seo: {},
-      integrations: initialIntegrations,
-      enquiries: [],
-      media: [],
-    };
+    data = {};
   }
+
+  let modified = false;
+
+  if (!Array.isArray(data.products) || data.products.length === 0) {
+    data.products = spices.map((s, index) => ({
+      _id: `prod_${s.slug}`,
+      ...s,
+      featured: true,
+      status: "published",
+      sortOrder: index,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }));
+    modified = true;
+  }
+
+  if (!Array.isArray(data.ports) || data.ports.length === 0) {
+    data.ports = keralaPorts.map((p, index) => ({
+      _id: `port_${p.id}`,
+      ...p,
+      slug: p.id,
+      isPublished: true,
+      sortOrder: index,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }));
+    modified = true;
+  }
+
+  if (!data.content || Object.keys(data.content).length === 0) {
+    data.content = initialWebsiteContent.reduce((acc, curr) => {
+      acc[curr.sectionKey] = curr;
+      return acc;
+    }, {});
+    modified = true;
+  }
+
+  if (!data.seo || Object.keys(data.seo).length === 0) {
+    data.seo = initialSeoSettings.reduce((acc, curr) => {
+      acc[curr.pageKey] = curr;
+      return acc;
+    }, {});
+    modified = true;
+  }
+
+  if (!data.integrations) {
+    data.integrations = initialIntegrations;
+    modified = true;
+  }
+
+  if (!Array.isArray(data.enquiries)) {
+    data.enquiries = [];
+    modified = true;
+  }
+
+  if (!Array.isArray(data.media)) {
+    data.media = [];
+    modified = true;
+  }
+
+  if (modified) {
+    try {
+      fs.writeFileSync(STORE_FILE, JSON.stringify(data, null, 2), "utf-8");
+    } catch (e) {}
+  }
+
+  return data;
 }
 
 function writeStore(data) {
@@ -209,6 +238,19 @@ export async function getProducts(onlyPublished = false) {
 
   const store = readStore();
   let list = store.products || [];
+  if (list.length === 0) {
+    list = spices.map((s, index) => ({
+      _id: `prod_${s.slug}`,
+      ...s,
+      featured: true,
+      status: "published",
+      sortOrder: index,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }));
+    store.products = list;
+    writeStore(store);
+  }
   if (onlyPublished) {
     list = list.filter((p) => p.status === "published");
   }
@@ -312,6 +354,19 @@ export async function getPorts(onlyPublished = false) {
 
   const store = readStore();
   let list = store.ports || [];
+  if (list.length === 0) {
+    list = keralaPorts.map((p, index) => ({
+      _id: `port_${p.id}`,
+      ...p,
+      slug: p.id,
+      isPublished: true,
+      sortOrder: index,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }));
+    store.ports = list;
+    writeStore(store);
+  }
   if (onlyPublished) {
     list = list.filter((p) => p.isPublished !== false);
   }
@@ -561,13 +616,14 @@ export async function getEnquiries(filters = {}) {
       if (filters.status && filters.status !== "all") {
         query.status = filters.status;
       }
-      if (filters.search) {
+      if (filters.search && typeof filters.search === "string") {
+        const safeSearch = filters.search.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         query.$or = [
-          { name: { $regex: filters.search, $options: "i" } },
-          { email: { $regex: filters.search, $options: "i" } },
-          { company: { $regex: filters.search, $options: "i" } },
-          { country: { $regex: filters.search, $options: "i" } },
-          { product: { $regex: filters.search, $options: "i" } },
+          { name: { $regex: safeSearch, $options: "i" } },
+          { email: { $regex: safeSearch, $options: "i" } },
+          { company: { $regex: safeSearch, $options: "i" } },
+          { country: { $regex: safeSearch, $options: "i" } },
+          { product: { $regex: safeSearch, $options: "i" } },
         ];
       }
       const list = await Enquiry.find(query).sort({ createdAt: -1 }).lean();

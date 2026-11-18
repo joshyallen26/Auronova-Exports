@@ -12,6 +12,7 @@ const EnquirySchema = new mongoose.Schema(
       required: true,
       trim: true,
       lowercase: true,
+      index: true,
     },
     company: {
       type: String,
@@ -70,6 +71,7 @@ const EnquirySchema = new mongoose.Schema(
       type: String,
       enum: ["new", "contacted", "in_progress", "closed"],
       default: "new",
+      index: true,
     },
     notes: {
       type: String,
@@ -82,5 +84,8 @@ const EnquirySchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+EnquirySchema.index({ createdAt: -1 });
+EnquirySchema.index({ status: 1, createdAt: -1 });
 
 export default mongoose.models.Enquiry || mongoose.model("Enquiry", EnquirySchema);

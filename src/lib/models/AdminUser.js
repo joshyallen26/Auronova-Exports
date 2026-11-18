@@ -6,6 +6,7 @@ const AdminUserSchema = new mongoose.Schema(
       type: String,
       required: true,
       default: "Auronova Administrator",
+      trim: true,
     },
     email: {
       type: String,
@@ -13,6 +14,7 @@ const AdminUserSchema = new mongoose.Schema(
       unique: true,
       lowercase: true,
       trim: true,
+      index: true,
     },
     password: {
       type: String,
@@ -24,6 +26,25 @@ const AdminUserSchema = new mongoose.Schema(
       enum: ["superadmin", "editor"],
     },
     lastLogin: {
+      type: Date,
+      default: null,
+    },
+    // Password reset fields (cryptographically hashed single-use token)
+    resetPasswordToken: {
+      type: String,
+      default: null,
+      index: true,
+    },
+    resetPasswordExpires: {
+      type: Date,
+      default: null,
+    },
+    // Brute force protection
+    loginAttempts: {
+      type: Number,
+      default: 0,
+    },
+    lockUntil: {
       type: Date,
       default: null,
     },
